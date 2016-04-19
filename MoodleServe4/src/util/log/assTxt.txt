@@ -1,0 +1,3 @@
+[Assert] : 2016/04/15 02:26:47 /Users/tangs/IdeaProjects/MoodleServe4/src/util/log/log_test.go:12: this is assert
+[Assert] : 2016/04/15 02:27:43 /Users/tangs/IdeaProjects/MoodleServe4/src/util/log/log_test.go:12: this is assert
+[Assert] : 2016/04/15 02:29:57 /Users/tangs/IdeaProjects/MoodleServe4/src/util/log/log_test.go:12: this is assert

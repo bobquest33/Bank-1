@@ -1,0 +1,24 @@
+[Error] : 2016/04/15 01:21:24 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:58: json: Unmarshal(non-pointer logic.EBI)%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Error] : 2016/04/15 01:28:26 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:58: json: Unmarshal(non-pointer logic.EBI)%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Error] : 2016/04/15 01:29:38 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:58: json: Unmarshal(non-pointer logic.EBI)%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Error] : 2016/04/15 01:30:16 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:58: json: Unmarshal(non-pointer logic.EBI)%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Error] : 2016/04/15 02:26:47 /Users/tangs/IdeaProjects/MoodleServe4/src/util/log/log_test.go:13: this is error
+[Error] : 2016/04/15 02:27:43 /Users/tangs/IdeaProjects/MoodleServe4/src/util/log/log_test.go:13: this is error
+[Error] : 2016/04/15 02:29:57 /Users/tangs/IdeaProjects/MoodleServe4/src/util/log/log_test.go:13: this is error
+[Error] : 2016/04/18 14:51:45 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:30: Id create error%!(EXTRA *errors.errorString=Guid create error)
+[Error] : 2016/04/18 14:52:17 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:30: Id create error%!(EXTRA *errors.errorString=Guid create error)
+[Error] : 2016/04/18 14:59:50 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:69: sql: no rows in result set
+[Error] : 2016/04/18 14:59:50 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:136: sql: no rows in result set
+[Error] : 2016/04/18 15:00:55 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:69: sql: no rows in result set
+[Error] : 2016/04/18 15:00:55 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:136: sql: no rows in result set
+[Error] : 2016/04/18 15:05:31 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:98: Error 1062: Duplicate entry '' for key 'PRIMARY'
+[Error] : 2016/04/18 15:06:27 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:99: Error 1062: Duplicate entry '' for key 'PRIMARY'
+[Error] : 2016/04/18 15:32:42 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:98: Error 1062: Duplicate entry '' for key 'PRIMARY'%!(EXTRA string={Table:t_exam_bank Name:[] FV:map[Class:Math Remark:Nothing Status:draft id: Name:examTangs Type:common] FVW:map[] NEqual:map[]}
+)
+[Error] : 2016/04/18 15:35:28 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:98: Error 1062: Duplicate entry '' for key 'PRIMARY'%!(EXTRA string={Table:t_exam_bank Name:[] FV:map[Remark:Nothing Status:draft Id: Name:examTangs Type:common Class:Math] FVW:map[] NEqual:map[]}
+{Id: Name:examTangs Old_Name: Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Error] : 2016/04/18 15:36:11 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:98: Error 1062: Duplicate entry '' for key 'PRIMARY'%!(EXTRA string={Table:t_exam_bank Name:[] FV:map[Name:examTangs Type:common Class:Math Remark:Nothing Status:draft Id:] FVW:map[] NEqual:map[]}
+{Id: Name:examTangs Old_Name: Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Error] : 2016/04/18 15:36:48 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:98: Error 1062: Duplicate entry '' for key 'PRIMARY'%!(EXTRA string={Table:t_exam_bank Name:[] FV:map[Id: Name:examTangs Type:common Class:Math Remark:Nothing Status:draft] FVW:map[] NEqual:map[]}
+{Id: Name:examTangs Old_Name: Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Error] : 2016/04/18 15:42:09 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:196: json: cannot unmarshal object into Go value of type []logic.Exam_Bank%!(EXTRA string=[])

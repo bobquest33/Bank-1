@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dbInfo version = "1">
+    <dbuser>root</dbuser>
+    <dbcert>ts123456</dbcert>
+    <dbname>MoodleServe</dbname>
+    <dbport>3306</dbport>
+</dbInfo>

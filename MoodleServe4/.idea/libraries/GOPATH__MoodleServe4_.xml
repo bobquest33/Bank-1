@@ -1,0 +1,88 @@
+<component name="libraryTable">
+  <library name="GOPATH &lt;MoodleServe4&gt;">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/clint_main.go" />
+      <root url="file://$USER_HOME$/ddpf/project/src/utils" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/MoodleServe3.iml" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/github.com" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/mytest" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/.DS_Store" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/.idea" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/config.xml" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/gitdy.iml" />
+      <root url="file://$USER_HOME$/go/src/dbm" />
+      <root url="file://$PROJECT_DIR$/../T/src/main.go" />
+      <root url="file://$PROJECT_DIR$/../T/src/ttt" />
+      <root url="file://$USER_HOME$/go/src/gopkg.in" />
+      <root url="file://$PROJECT_DIR$/../T/src/ddd" />
+      <root url="file://$USER_HOME$/ddpf/project/src/main.go" />
+      <root url="file://$USER_HOME$/ddpf/project/src/project" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/paper" />
+      <root url="file://$USER_HOME$/ddpf/project/src/controllers" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/bug" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/common" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/mrouter" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/client_main2.go" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/test.go" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/main" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/simple" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/test_t.go" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/myfunc" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/github.com" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/main.go" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/mydb" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/.DS_Store" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/client" />
+      <root url="file://$USER_HOME$/ddpf/project/src/github.com" />
+      <root url="file://$USER_HOME$/ddpf/project/src/tests" />
+      <root url="file://$USER_HOME$/ddpf/project/src/models" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/t.go" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/mlogic" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/www" />
+      <root url="file://$USER_HOME$/go/src/github.com" />
+      <root url="file://$PROJECT_DIR$/../MoodleServe3/src/mylog" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <excluded>
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/imh_impl/.git" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/ims/.git" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/ses/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/go-sql-driver/mysql/.git" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/dms/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/smartystreets/assertions/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/astaxie/beego/utils/testdata" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/course/.git" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/.idea" />
+      <root url="file://$USER_HOME$/ddpf/project/src/github.com/astaxie/beego/utils/testdata" />
+      <root url="file://$USER_HOME$/go/src/github.com/astaxie/beego/.github" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/mgo.v2/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/beego/bee/testdata" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/uas/.git" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/demo/.git" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/github.com/Centny/.git" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/imh_impl/imapi/url/.git" />
+      <root url="file://$PROJECT_DIR$" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/pes/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/Centny/dbm/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/smartystreets/goconvey/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/jtolds/gls/.git" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/imsg/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/smartystreets/assertions/internal/oglemock/createmock/testdata" />
+      <root url="file://$USER_HOME$/go/src/github.com/beego/bee/.git" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/wcms/.git" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/imh_impl/imapi/url/urlapi/dbm/.git" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/fs/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/Centny/gwf/.git" />
+      <root url="file://$USER_HOME$/go/src/gopkg.in/mgo.v2/.git" />
+      <root url="file://$USER_HOME$/go/src/dbm/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/howeyc/fsnotify/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/lib/pq/.git" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/url/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/astaxie/beego/.git" />
+      <root url="file://$USER_HOME$/go/src/github.com/smartystreets/assertions/internal/oglemock/generate/testdata" />
+      <root url="file://$PROJECT_DIR$/../gitdy/src/w.gdy.io/dyf/dbm/.git" />
+    </excluded>
+  </library>
+</component>

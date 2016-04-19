@@ -1,0 +1,98 @@
+[Waring] : 2016/04/14 23:45:35 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:23: Create exambank but the exambank is null
+[Waring] : 2016/04/15 01:21:24 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 01:21:24 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 01:21:24 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:158: Delete exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 01:28:26 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 01:28:26 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 01:28:26 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:158: Delete exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 01:29:38 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 01:29:38 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 01:29:38 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:158: Delete exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 01:30:16 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 01:30:16 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 01:30:16 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:158: Delete exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 02:17:40 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:48: Create exambank but the exambank is aleady exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft}, string=exambank_id : , int=10)
+[Waring] : 2016/04/15 02:17:40 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 02:19:14 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:48: Create exambank but the exambank is aleady exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft}, string=exambank_id : , int=10)
+[Waring] : 2016/04/15 02:19:14 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 02:26:47 /Users/tangs/IdeaProjects/MoodleServe4/src/util/log/log_test.go:15: this is warning
+[Waring] : 2016/04/15 02:27:43 /Users/tangs/IdeaProjects/MoodleServe4/src/util/log/log_test.go:15: this is warning
+[Waring] : 2016/04/15 02:29:57 /Users/tangs/IdeaProjects/MoodleServe4/src/util/log/log_test.go:15: this is warning
+[Waring] : 2016/04/15 10:29:43 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:31:20 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:48: Create exambank but the exambank is aleady exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft}, string=exambank_id : , int=10)
+[Waring] : 2016/04/15 10:31:20 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:34:17 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:34:37 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:35:05 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:36:05 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:38:39 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:39:41 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:40:28 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:41:06 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:41:06 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:41:58 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:41:58 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:42:39 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:42:39 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:43:48 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:43:48 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:48:16 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:48:16 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:49:25 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/15 10:56:47 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Update exambank but the exambank is not exist
+%!(EXTRA logic.Exam_Bank={0 tangs1  private magic  private draft}, string=exambank_id : , int=0)
+[Waring] : 2016/04/18 15:03:26 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:143: Update save exambank but the exambank is not exist%!(EXTRA string={Id: Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Waring] : 2016/04/18 15:05:31 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:143: Update save exambank but the exambank is not exist%!(EXTRA string={Id: Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Waring] : 2016/04/18 15:06:27 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:144: Update save exambank but the exambank is not exist%!(EXTRA string={Id: Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Waring] : 2016/04/18 15:32:42 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:143: Update save exambank but the exambank is not exist%!(EXTRA string={Id: Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Waring] : 2016/04/18 15:35:28 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:143: Update save exambank but the exambank is not exist%!(EXTRA string={Id: Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Waring] : 2016/04/18 15:36:11 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:143: Update save exambank but the exambank is not exist%!(EXTRA string={Id: Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Waring] : 2016/04/18 15:36:48 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:143: Update save exambank but the exambank is not exist%!(EXTRA string={Id: Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Waring] : 2016/04/18 15:48:58 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:118: Update save exambank but the exambank is null
+[Waring] : 2016/04/18 16:10:19 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:118: Update save exambank but the exambank is null
+[Waring] : 2016/04/18 16:10:23 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:51: Create save exambank but the exambank is null
+[Waring] : 2016/04/18 17:37:21 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:51: Create save exambank but the exambank is null
+[Waring] : 2016/04/18 17:37:22 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:51: Create save exambank but the exambank is null
+[Waring] : 2016/04/18 18:07:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:118: Update save exambank but the exambank is null
+[Waring] : 2016/04/18 22:06:11 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:117: Update save exambank but the exambank is null
+[Waring] : 2016/04/18 22:06:16 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:51: Create save exambank but the exambank is null
+[Waring] : 2016/04/19 10:24:09 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:142: Update save exambank but the exambank is not exist%!(EXTRA string={Id:0b132cd2c9464c5fa9cf27f2c84a7967 Name:examLily Type:private Class:Math Create_Time: Remark:Remark Status:auditing}
+  Find id )
+[Waring] : 2016/04/19 10:24:09 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/cud_util.go:24: Delete exambank but the exambank is not exist%!(EXTRA string={Id:0b132cd2c9464c5fa9cf27f2c84a7967 Name: Type: Class: Create_Time: Remark: Status:})

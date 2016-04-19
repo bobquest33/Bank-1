@@ -1,0 +1,495 @@
+[Log] : 2016/04/13 17:42:46 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/mysql.go:28: Connect database succeed.
+[Log] : 2016/04/14 23:44:43 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 01:01:07 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 01:02:50 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 01:21:24 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 01:21:24 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:21:24 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:21:24 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:21:24 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:28:26 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 01:28:26 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:28:26 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:28:26 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:28:26 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:29:38 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 01:29:38 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:29:38 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:29:38 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:29:38 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:30:16 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 01:30:16 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:30:16 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:30:16 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:30:16 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 01:33:52 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 01:34:38 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 01:38:17 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 01:40:07 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 01:40:58 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 01:43:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 01:56:48 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 01:57:10 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 02:02:21 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 02:05:27 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 02:08:49 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 02:17:21 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 02:17:40 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 02:17:40 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:85: GetDb succeed!
+[Log] : 2016/04/15 02:17:40 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:85: GetDb succeed!
+[Log] : 2016/04/15 02:17:40 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:85: GetDb succeed!
+[Log] : 2016/04/15 02:17:40 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={10 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 02:19:04 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 02:19:14 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 02:19:14 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:85: GetDb succeed!
+[Log] : 2016/04/15 02:19:14 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:85: GetDb succeed!
+[Log] : 2016/04/15 02:19:14 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:85: GetDb succeed!
+[Log] : 2016/04/15 02:19:14 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={10 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 02:26:20 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 02:26:47 /Users/tangs/IdeaProjects/MoodleServe4/src/util/log/log_test.go:11: this is log
+[Log] : 2016/04/15 02:27:43 /Users/tangs/IdeaProjects/MoodleServe4/src/util/log/log_test.go:11: this is log
+[Log] : 2016/04/15 02:29:57 /Users/tangs/IdeaProjects/MoodleServe4/src/util/log/log_test.go:11: this is log
+[Log] : 2016/04/15 10:29:27 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:29:43 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:29:43 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:29:43 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:29:43 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:29:43 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:29:43 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={11 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:31:20 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:31:20 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:31:20 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:31:20 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:31:20 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={10 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:31:20 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:34:17 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:34:17 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:34:17 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:34:17 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:34:17 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:34:17 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={12 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:34:17 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:34:37 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:34:37 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:34:37 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:34:37 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:34:37 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:34:37 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={13 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:34:37 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:35:05 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:35:05 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:35:05 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:35:05 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:35:05 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:35:05 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={14 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:36:05 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:36:05 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:36:05 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:36:05 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:36:05 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:36:05 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={15 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:38:39 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:38:39 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:38:39 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:38:39 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:38:39 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:38:39 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={16 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:38:39 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:39:41 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:39:41 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:39:41 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:39:41 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:39:41 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:39:41 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={17 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:39:41 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:40:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:40:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:40:28 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:40:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:40:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:40:28 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={18 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:40:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:41:06 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:41:06 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:41:06 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:41:06 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:41:06 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:41:06 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={19 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:41:06 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:41:58 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:41:58 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:41:58 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:41:58 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:41:58 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:41:58 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={20 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:41:58 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:41:58 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:42:39 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:42:39 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:42:39 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:42:39 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:42:39 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:42:39 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={21 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:42:39 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:43:48 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:43:48 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:43:48 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:43:48 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:43:48 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:43:48 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={22 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:43:48 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:43:48 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:48:10 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:48:16 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:48:16 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:48:16 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:48:16 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:48:16 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:48:16 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={23 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:48:16 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:48:16 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:48:16 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Delete exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:49:25 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:49:25 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:49:25 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:49:25 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:49:25 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:49:25 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={24 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:49:25 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:49:25 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Delete exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={0 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:52:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:52:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:52:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Delete exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={0 tangs  common math  private draft})
+[Log] : 2016/04/15 10:53:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:53:32 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:53:32 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:53:32 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Delete exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={0 tangs  common math  private draft})
+[Log] : 2016/04/15 10:54:38 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:54:41 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:54:41 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:54:41 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:173: Delete exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={24 tangs  common math  private draft})
+[Log] : 2016/04/15 10:56:47 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/15 10:56:47 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:56:47 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:65: Create exambank tangs1 succeed
+%!(EXTRA logic.Exam_Bank={0 tangs1  common math  private draft})
+[Log] : 2016/04/15 10:56:47 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:56:47 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:56:47 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:119: Update exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={25 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/15 10:56:47 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/15 10:56:47 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:173: Delete exambank tangs succeed
+%!(EXTRA logic.Exam_Bank={25 tangs tangs1 private magic  private draft})
+[Log] : 2016/04/18 14:26:37 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/18 14:26:46 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/18 14:32:30 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/18 14:33:14 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/18 14:34:22 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/18 14:35:19 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/18 14:35:47 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/18 14:36:05 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/18 14:36:05 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:84: GetDb succeed!
+[Log] : 2016/04/18 14:39:12 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:35: Connect database succeed.
+[Log] : 2016/04/18 14:41:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 14:44:09 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 14:44:21 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 14:44:21 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 14:51:42 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 14:51:45 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 14:52:17 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 14:56:38 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 14:56:46 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 14:56:46 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=)
+[Log] : 2016/04/18 14:59:00 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 14:59:04 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 14:59:04 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=09684340374cd1b69705ea3fe6336c38)
+[Log] : 2016/04/18 14:59:12 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 14:59:50 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 14:59:50 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 14:59:50 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:00:55 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:00:55 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:00:55 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=0e32c0ffdc9f6e71f3c86ab8ad0c0899)
+[Log] : 2016/04/18 15:00:55 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:00:55 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:03:20 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:03:26 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:03:26 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:03:26 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=0037cbd26c21ff3ce86136134992a11e)
+[Log] : 2016/04/18 15:03:26 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:03:26 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Create exambank succeed%!(EXTRA string={Id: Name:examTangs Old_Name: Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 15:03:26 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:05:23 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:05:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:05:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:05:31 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=bc60c62e4c7d8d1dee5c589d436d358e)
+[Log] : 2016/04/18 15:05:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:05:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:06:24 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:06:27 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:06:27 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:06:27 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=590794cf9b7aaab564a559272e94918d)
+[Log] : 2016/04/18 15:06:27 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:06:27 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:32:36 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:32:42 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:32:42 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:32:42 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=9e089df36b80e8a4919cd4179b9a3895)
+[Log] : 2016/04/18 15:32:42 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:32:42 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:35:14 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:35:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:35:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:35:28 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=80163ecfd15ebc637f7847d7e035e4ec)
+[Log] : 2016/04/18 15:35:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:35:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:36:11 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:36:11 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:36:11 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=15c8b950de5c62629912d287ae88ebd9)
+[Log] : 2016/04/18 15:36:11 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:36:11 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:36:48 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:36:48 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:36:48 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=0a59742959468da41c389b9bc4012b32)
+[Log] : 2016/04/18 15:36:48 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:36:48 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:37:12 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:37:12 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:37:12 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=971e82b6da6c7132d243baaa1d4c6fd8)
+[Log] : 2016/04/18 15:37:12 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:37:12 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Create exambank succeed%!(EXTRA string={Id:971e82b6da6c7132d243baaa1d4c6fd8 Name:examTangs Old_Name: Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 15:37:12 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:37:12 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Update exambank succeed%!(EXTRA string={Id:971e82b6da6c7132d243baaa1d4c6fd8 Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 15:39:08 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:39:08 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:39:08 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=ca38eea9983d689cb0ba2faf90b08f33)
+[Log] : 2016/04/18 15:39:08 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:39:08 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Create exambank succeed%!(EXTRA string={Id:ca38eea9983d689cb0ba2faf90b08f33 Name:examTangs Old_Name: Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 15:39:08 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:39:08 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Update exambank succeed%!(EXTRA string={Id:ca38eea9983d689cb0ba2faf90b08f33 Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 15:42:09 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:42:09 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:42:09 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=b3a300534aa5b8f814dfe3962eb6989b)
+[Log] : 2016/04/18 15:42:09 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:42:09 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Create exambank succeed%!(EXTRA string={Id:b3a300534aa5b8f814dfe3962eb6989b Name:examTangs Old_Name: Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 15:42:09 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:42:09 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Update exambank succeed%!(EXTRA string={Id:b3a300534aa5b8f814dfe3962eb6989b Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 15:43:24 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:43:24 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:43:24 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=acb6aabe31b6da679ec81f9130c18a13)
+[Log] : 2016/04/18 15:43:24 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:43:24 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Create exambank succeed%!(EXTRA string={Id:acb6aabe31b6da679ec81f9130c18a13 Name:examTangs Old_Name: Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 15:43:24 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:43:24 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Update exambank succeed%!(EXTRA string={Id:acb6aabe31b6da679ec81f9130c18a13 Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 15:43:24 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:43:24 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/cud_util.go:45: Delete exambank succed%!(EXTRA string=[{Id:acb6aabe31b6da679ec81f9130c18a13 Name: Old_Name: Type: Class: Create_Time: Remark: Status:}])
+[Log] : 2016/04/18 15:44:19 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:44:19 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:44:19 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=9dda983e54a129b9ad65c938f8e634d9)
+[Log] : 2016/04/18 15:44:19 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:44:19 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Create exambank succeed%!(EXTRA string={Id:9dda983e54a129b9ad65c938f8e634d9 Name:examTangs Old_Name: Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 15:44:19 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:44:19 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Update exambank succeed%!(EXTRA string={Id:9dda983e54a129b9ad65c938f8e634d9 Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 15:44:19 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:44:19 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/cud_util.go:45: Delete exambank succed%!(EXTRA string=[{Id:9dda983e54a129b9ad65c938f8e634d9 Name: Old_Name: Type: Class: Create_Time: Remark: Status:}])
+[Log] : 2016/04/18 15:44:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:44:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:44:31 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=9c8ce6853498526b2acc0dbdf7b7203c)
+[Log] : 2016/04/18 15:44:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:44:31 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Create exambank succeed%!(EXTRA string={Id:9c8ce6853498526b2acc0dbdf7b7203c Name:examTangs Old_Name: Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 15:44:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:44:31 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Update exambank succeed%!(EXTRA string={Id:9c8ce6853498526b2acc0dbdf7b7203c Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 15:44:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:44:31 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/cud_util.go:45: Delete exambank succed%!(EXTRA string=[{Id:9c8ce6853498526b2acc0dbdf7b7203c Name: Old_Name: Type: Class: Create_Time: Remark: Status:}])
+[Log] : 2016/04/18 15:44:54 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:44:54 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:44:54 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=d61d7099c8b92dbe76d8b3dbbab9ac16)
+[Log] : 2016/04/18 15:44:54 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:44:54 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Create exambank succeed%!(EXTRA string={Id:d61d7099c8b92dbe76d8b3dbbab9ac16 Name:examTangs Old_Name: Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 15:44:54 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:44:54 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Update exambank succeed%!(EXTRA string={Id:d61d7099c8b92dbe76d8b3dbbab9ac16 Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 15:45:06 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 15:45:06 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:45:06 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=4d68cfdf659968d4cd42df4fbef691b8)
+[Log] : 2016/04/18 15:45:06 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:45:06 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Create exambank succeed%!(EXTRA string={Id:4d68cfdf659968d4cd42df4fbef691b8 Name:examTangs Old_Name: Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 15:45:06 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:45:06 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Update exambank succeed%!(EXTRA string={Id:4d68cfdf659968d4cd42df4fbef691b8 Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 15:45:06 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 15:45:06 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/cud_util.go:45: Delete exambank succed%!(EXTRA string=[{Id:4d68cfdf659968d4cd42df4fbef691b8 Name: Old_Name: Type: Class: Create_Time: Remark: Status:}])
+[Log] : 2016/04/18 16:08:36 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 16:08:36 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 16:08:36 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=7c0c9e70558dfe9e8c326d6345767e17)
+[Log] : 2016/04/18 16:08:36 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 16:08:36 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Create exambank succeed%!(EXTRA string={Id:7c0c9e70558dfe9e8c326d6345767e17 Name:examTangs Old_Name: Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 16:08:36 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 16:08:36 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Update exambank succeed%!(EXTRA string={Id:7c0c9e70558dfe9e8c326d6345767e17 Name:examLily Old_Name: Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 16:08:36 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 16:08:36 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/cud_util.go:45: Delete exambank succed%!(EXTRA string=[{Id:7c0c9e70558dfe9e8c326d6345767e17 Name: Old_Name: Type: Class: Create_Time: Remark: Status:}])
+[Log] : 2016/04/18 16:08:51 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 16:08:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 16:08:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 16:08:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=94a8f040662507fa26c285e1bdfbf023)
+[Log] : 2016/04/18 16:08:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 16:08:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Create exambank succeed%!(EXTRA string={Id:94a8f040662507fa26c285e1bdfbf023 Name:examTangs Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 16:08:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 16:08:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Update exambank succeed%!(EXTRA string={Id:94a8f040662507fa26c285e1bdfbf023 Name:examLily Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 16:08:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 16:08:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/cud_util.go:45: Delete exambank succed%!(EXTRA string=[{Id:94a8f040662507fa26c285e1bdfbf023 Name: Type: Class: Create_Time: Remark: Status:}])
+[Log] : 2016/04/18 16:08:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 16:08:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:244: List exambank sueeccd%!(EXTRA []logic.Exam_Bank=[{971e82b6da6c7132d243baaa1d4c6fd8 examLily private Math 2016-04-18 15:37:12 Remark auditing} {b3a300534aa5b8f814dfe3962eb6989b examLily private Math 2016-04-18 15:42:09 Remark auditing} {ca38eea9983d689cb0ba2faf90b08f33 examLily private Math 2016-04-18 15:39:08 Remark auditing} {d61d7099c8b92dbe76d8b3dbbab9ac16 examLily private Math 2016-04-18 15:44:54 Remark auditing}])
+[Log] : 2016/04/18 17:16:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 17:16:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 17:16:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=dc4604960eff39502106ee6ab6d88bac)
+[Log] : 2016/04/18 17:16:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 17:16:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Create exambank succeed%!(EXTRA string={Id:dc4604960eff39502106ee6ab6d88bac Name:examTangs Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 17:16:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 17:16:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Update exambank succeed%!(EXTRA string={Id:dc4604960eff39502106ee6ab6d88bac Name:examLily Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 17:16:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 17:16:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/cud_util.go:45: Delete exambank succed%!(EXTRA string=[{Id:dc4604960eff39502106ee6ab6d88bac Name: Type: Class: Create_Time: Remark: Status:}])
+[Log] : 2016/04/18 17:16:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 17:16:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:244: List exambank sueeccd%!(EXTRA []logic.Exam_Bank=[{971e82b6da6c7132d243baaa1d4c6fd8 examLily private Math 2016-04-18 15:37:12 Remark auditing} {b3a300534aa5b8f814dfe3962eb6989b examLily private Math 2016-04-18 15:42:09 Remark auditing} {ca38eea9983d689cb0ba2faf90b08f33 examLily private Math 2016-04-18 15:39:08 Remark auditing} {d61d7099c8b92dbe76d8b3dbbab9ac16 examLily private Math 2016-04-18 15:44:54 Remark auditing}])
+[Log] : 2016/04/18 18:12:07 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 18:12:07 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:12:07 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Id create succeed%!(EXTRA string=35df9968931f0e7db4190277508d3834)
+[Log] : 2016/04/18 18:12:07 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:12:07 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:104: Create exambank succeed%!(EXTRA string={Id:35df9968931f0e7db4190277508d3834 Name:examTangs Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 18:12:07 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:12:07 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:172: Update exambank succeed%!(EXTRA string={Id:35df9968931f0e7db4190277508d3834 Name:examLily Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 18:12:07 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:12:07 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/cud_util.go:45: Delete exambank succed%!(EXTRA string=[{Id:35df9968931f0e7db4190277508d3834 Name: Type: Class: Create_Time: Remark: Status:}])
+[Log] : 2016/04/18 18:12:07 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:12:07 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:244: List exambank sueeccd%!(EXTRA []logic.Exam_Bank=[])
+[Log] : 2016/04/18 18:14:23 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 18:14:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 18:14:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:14:28 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Exambank id create succeed%!(EXTRA string=deb98123aea9e19fdd83b128c64d5944)
+[Log] : 2016/04/18 18:14:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:14:28 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:103: Create exambank succeed%!(EXTRA string={Id:deb98123aea9e19fdd83b128c64d5944 Name:examTangs Type:common Class:Math Create_Time: Remark:Nothing Status:draft Del:false})
+[Log] : 2016/04/18 18:14:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:14:28 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:171: Update exambank succeed%!(EXTRA string={Id:deb98123aea9e19fdd83b128c64d5944 Name:examLily Type:private Class:Math Create_Time: Remark:Remark Status:auditing Del:false})
+[Log] : 2016/04/18 18:14:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:14:28 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/cud_util.go:45: Delete exambank succed%!(EXTRA string=[{Id:deb98123aea9e19fdd83b128c64d5944 Name: Type: Class: Create_Time: Remark: Status: Del:false}])
+[Log] : 2016/04/18 18:14:28 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:14:28 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:242: List exambank sueeccd%!(EXTRA []logic.Exam_Bank=[])
+[Log] : 2016/04/18 18:14:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 18:14:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:14:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Exambank id create succeed%!(EXTRA string=df363fb64ebaacbc014cd2d3bec32d67)
+[Log] : 2016/04/18 18:14:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:14:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:103: Create exambank succeed%!(EXTRA string={Id:df363fb64ebaacbc014cd2d3bec32d67 Name:examTangs Type:common Class:Math Create_Time: Remark:Nothing Status:draft Del:false})
+[Log] : 2016/04/18 18:14:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:14:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:171: Update exambank succeed%!(EXTRA string={Id:df363fb64ebaacbc014cd2d3bec32d67 Name:examLily Type:private Class:Math Create_Time: Remark:Remark Status:auditing Del:false})
+[Log] : 2016/04/18 18:14:59 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:14:59 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:242: List exambank sueeccd%!(EXTRA []logic.Exam_Bank=[{df363fb64ebaacbc014cd2d3bec32d67 examLily private Math 2016-04-18 18:14:59 Remark auditing false}])
+[Log] : 2016/04/18 18:21:01 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 18:21:01 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:21:01 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Exambank id create succeed%!(EXTRA string=911a188e611a221213cdc5145b415a88)
+[Log] : 2016/04/18 18:21:01 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:21:01 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:103: Create exambank succeed%!(EXTRA string={Id:911a188e611a221213cdc5145b415a88 Name:examTangs Type:common Class:Math Create_Time: Remark:Nothing Status:draft Del:false})
+[Log] : 2016/04/18 18:21:01 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:21:01 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:171: Update exambank succeed%!(EXTRA string={Id:911a188e611a221213cdc5145b415a88 Name:examLily Type:private Class:Math Create_Time: Remark:Remark Status:auditing Del:false})
+[Log] : 2016/04/18 18:21:01 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:21:01 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:242: List exambank sueeccd%!(EXTRA []logic.Exam_Bank=[{911a188e611a221213cdc5145b415a88 examLily private Math 2016-04-18 18:21:01 Remark auditing false}])
+[Log] : 2016/04/18 18:22:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 18:22:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:22:31 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Exambank id create succeed%!(EXTRA string=c652bd9a826f76ad9673f79b5381a8ae)
+[Log] : 2016/04/18 18:22:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:22:31 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:103: Create exambank succeed%!(EXTRA string={Id:c652bd9a826f76ad9673f79b5381a8ae Name:examTangs Type:common Class:Math Create_Time: Remark:Nothing Status:draft Del:false})
+[Log] : 2016/04/18 18:22:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:22:31 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:171: Update exambank succeed%!(EXTRA string={Id:c652bd9a826f76ad9673f79b5381a8ae Name:examLily Type:private Class:Math Create_Time: Remark:Remark Status:auditing Del:false})
+[Log] : 2016/04/18 18:22:31 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:22:31 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:242: List exambank sueeccd%!(EXTRA []logic.Exam_Bank=[{911a188e611a221213cdc5145b415a88 examLily private Math 2016-04-18 18:21:01 Remark auditing false} {c652bd9a826f76ad9673f79b5381a8ae examLily private Math 2016-04-18 18:22:31 Remark auditing false}])
+[Log] : 2016/04/18 18:22:44 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 18:22:51 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 18:22:51 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:22:51 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Exambank id create succeed%!(EXTRA string=bbeea6316cf7bb3f17d0a887d63a1637)
+[Log] : 2016/04/18 18:22:51 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:22:51 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:103: Create exambank succeed%!(EXTRA string={Id:bbeea6316cf7bb3f17d0a887d63a1637 Name:examTangs Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 18:22:51 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:22:51 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:171: Update exambank succeed%!(EXTRA string={Id:bbeea6316cf7bb3f17d0a887d63a1637 Name:examLily Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 18:22:51 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:22:51 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:242: List exambank sueeccd%!(EXTRA []logic.Exam_Bank=[{911a188e611a221213cdc5145b415a88 examLily private Math 2016-04-18 18:21:01 Remark auditing} {bbeea6316cf7bb3f17d0a887d63a1637 examLily private Math 2016-04-18 18:22:51 Remark auditing} {c652bd9a826f76ad9673f79b5381a8ae examLily private Math 2016-04-18 18:22:31 Remark auditing}])
+[Log] : 2016/04/18 18:23:20 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 18:23:20 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:23:20 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Exambank id create succeed%!(EXTRA string=a39173fcc96bccfd79804ad7c53cf04e)
+[Log] : 2016/04/18 18:23:20 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:23:20 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:103: Create exambank succeed%!(EXTRA string={Id:a39173fcc96bccfd79804ad7c53cf04e Name:examTangs Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 18:23:20 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:23:20 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:171: Update exambank succeed%!(EXTRA string={Id:a39173fcc96bccfd79804ad7c53cf04e Name:examLily Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 18:23:20 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:23:20 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:242: List exambank sueeccd%!(EXTRA []logic.Exam_Bank=[{a39173fcc96bccfd79804ad7c53cf04e examLily private Math 2016-04-18 18:23:20 Remark auditing}])
+[Log] : 2016/04/18 18:23:41 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 18:23:41 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:23:41 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Exambank id create succeed%!(EXTRA string=044ecfebe6ce18c9ce968817e6a982e4)
+[Log] : 2016/04/18 18:23:41 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:23:41 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:103: Create exambank succeed%!(EXTRA string={Id:044ecfebe6ce18c9ce968817e6a982e4 Name:examTangs Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 18:23:41 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:23:41 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:171: Update exambank succeed%!(EXTRA string={Id:044ecfebe6ce18c9ce968817e6a982e4 Name:examLily Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 18:23:41 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:23:41 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:242: List exambank sueeccd%!(EXTRA []logic.Exam_Bank=[{044ecfebe6ce18c9ce968817e6a982e4 examLily private Math 2016-04-18 18:23:41 Remark auditing} {a39173fcc96bccfd79804ad7c53cf04e examLily private Math 2016-04-18 18:23:20 Remark auditing}])
+[Log] : 2016/04/18 18:23:58 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/18 18:23:58 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:23:58 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Exambank id create succeed%!(EXTRA string=9bc4e682288e6d78dcfc841663bdd5d8)
+[Log] : 2016/04/18 18:23:58 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:23:58 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:103: Create exambank succeed%!(EXTRA string={Id:9bc4e682288e6d78dcfc841663bdd5d8 Name:examTangs Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/18 18:23:58 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:23:58 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:171: Update exambank succeed%!(EXTRA string={Id:9bc4e682288e6d78dcfc841663bdd5d8 Name:examLily Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/18 18:23:58 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:23:58 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/cud_util.go:45: Delete exambank succed%!(EXTRA string=[{Id:9bc4e682288e6d78dcfc841663bdd5d8 Name: Type: Class: Create_Time: Remark: Status:}])
+[Log] : 2016/04/18 18:23:58 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/18 18:23:58 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:242: List exambank sueeccd%!(EXTRA []logic.Exam_Bank=[{044ecfebe6ce18c9ce968817e6a982e4 examLily private Math 2016-04-18 18:23:41 Remark auditing} {a39173fcc96bccfd79804ad7c53cf04e examLily private Math 2016-04-18 18:23:20 Remark auditing}])
+[Log] : 2016/04/19 10:23:52 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/19 10:23:52 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/19 10:23:52 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Exambank id create succeed%!(EXTRA string=714b1805494e415f09d00eac94e355e0)
+[Log] : 2016/04/19 10:23:52 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/19 10:23:52 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:103: Create exambank succeed%!(EXTRA string={Id:714b1805494e415f09d00eac94e355e0 Name:examTangs Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/19 10:23:52 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/19 10:23:52 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:171: Update exambank succeed%!(EXTRA string={Id:714b1805494e415f09d00eac94e355e0 Name:examLily Type:private Class:Math Create_Time: Remark:Remark Status:auditing})
+[Log] : 2016/04/19 10:23:52 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/19 10:23:52 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/cud_util.go:45: Delete exambank succed%!(EXTRA string=[{Id:714b1805494e415f09d00eac94e355e0 Name: Type: Class: Create_Time: Remark: Status:}])
+[Log] : 2016/04/19 10:23:52 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/19 10:23:52 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:242: List exambank sueeccd%!(EXTRA []logic.Exam_Bank=[{044ecfebe6ce18c9ce968817e6a982e4 examLily private Math 2016-04-18 18:23:41 Remark auditing} {a39173fcc96bccfd79804ad7c53cf04e examLily private Math 2016-04-18 18:23:20 Remark auditing}])
+[Log] : 2016/04/19 10:24:09 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/19 10:24:09 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/19 10:24:09 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:36: Exambank id create succeed%!(EXTRA string=0b132cd2c9464c5fa9cf27f2c84a7967)
+[Log] : 2016/04/19 10:24:09 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/19 10:24:09 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:103: Create exambank succeed%!(EXTRA string={Id: Name:examTangs Type:common Class:Math Create_Time: Remark:Nothing Status:draft})
+[Log] : 2016/04/19 10:24:09 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/19 10:24:09 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/19 10:24:09 /Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/19 10:24:09 /Users/tangs/IdeaProjects/MoodleServe4/src/logic/logic.go:242: List exambank sueeccd%!(EXTRA []logic.Exam_Bank=[{ examTangs common Math 2016-04-19 10:24:09 Nothing draft} {044ecfebe6ce18c9ce968817e6a982e4 examLily private Math 2016-04-18 18:23:41 Remark auditing} {a39173fcc96bccfd79804ad7c53cf04e examLily private Math 2016-04-18 18:23:20 Remark auditing}])
