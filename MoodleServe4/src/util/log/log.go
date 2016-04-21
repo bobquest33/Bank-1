@@ -92,23 +92,23 @@ func defineLogInfo() (error) {
 
 
 func AddLog (v ...interface{})  {
-	logType.LogLog.Output(2, fmt.Sprintf("%s", v...))
+	logType.LogLog.Output(2, fmt.Sprintf("%+v", v...))
 }
 
 func AddAssert (v ...interface{}) {
-	logType.LogAssert.Output(2, fmt.Sprintf("%s", v...))
+	logType.LogAssert.Output(2, fmt.Sprintf("%+v", v...))
 }
 
 func AddWarning (v ...interface{}) {
-	logType.LogWar.Output(2, fmt.Sprintf("%s", v...))
+	logType.LogWar.Output(2, fmt.Sprintf("%+v", v...))
 }
 
 func AddError(v ...interface{}) {
-	logType.LogErr.Output(2, fmt.Sprintf("%s", v...))
+	logType.LogErr.Output(2, fmt.Sprintf("%+v", v...))
 }
 
 func AddException(v ...interface{}) {
-	logType.LogException.Output(2, fmt.Sprintf("%s", v...))
+	logType.LogException.Output(2, fmt.Sprintf("%+v", v...))
 }
 
 func AddTrance(v ...interface{})  {

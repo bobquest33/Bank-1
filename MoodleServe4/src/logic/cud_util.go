@@ -6,24 +6,16 @@ import (
 	"fmt"
 )
 
-func MDEB(db gmdb.DbController, ebm []Exam_Bank) Result {
+func MDEB(db gmdb.DbController, ebm []Exam_Bank, status int) Result {
 	res := Result{
 		Status:200,
 	}
 	length := 0
 	for i, v := range ebm {
-		idE, err := FindId(db.Mdb, gmdb.D_1, v.Id)
-		if err != nil {
-			log.AddError(err, fmt.Sprintf("%+v\n  Find id %s", v, idE))
-			res.Status = 203
-			res.Msg = err.Error()
-			res.Data = i
-			return res
-		}
-		if idE == "" {
-			log.AddWarning("Delete exambank but the exambank is not exist", fmt.Sprintf("%+v", v))
-			res.Status = 204
-			res.Msg = "Delete exambank but the exambank is not exist"
+		if !ump.EbMap[v.Id].I {
+			log.AddWarning("Delete exambank but Id isn't correct", fmt.Sprintf("%+v", v))
+			res.Status = status
+			res.Msg = "Delete exambank but Id isn't correct"
 			res.Data = i
 			return res
 		}
@@ -32,14 +24,16 @@ func MDEB(db gmdb.DbController, ebm []Exam_Bank) Result {
 		}
 		do.FVW = make(map[string]interface{})
 		do.FVW["id"] = v.Id
-		_, err = db.Delete(do, false)
+		_, err := db.Delete(do, false)
 		if err != nil {
+			status ++
 			log.AddError(err, fmt.Sprintf("%+v", do))
-			res.Status = 205
+			res.Status = status
 			res.Msg = err.Error()
 			res.Data = i
 			return res
 		}
+		ump.EbMap[v.Id] = CI{}
 		length = i
 	}
 	log.AddLog("Delete exambank succed",fmt.Sprintf("%+v", ebm))
@@ -47,28 +41,3 @@ func MDEB(db gmdb.DbController, ebm []Exam_Bank) Result {
 	res.Data = length + 1
 	return  res
 }
-
-//func MultiDelEBM(table string, ebm []Exam_Bank) (items, status int, err error) {
-//	db := gmdb.GetDb()
-//	var i int
-//	for i, eb := range ebm {
-//		idE, err := FindId(db.Mdb, gmdb.D_1, eb.Name)
-//		if err != nil {
-//			return i, 202, err
-//		}
-//		if idE < 1 {
-//			return i, 203, errors.New("Delete exambank but exambank is not exist\n")
-//		}
-//		eb.Id = idE
-//		do := gmdb.DbOpera{
-//			Table:table,
-//		}
-//		do.FVW = make(map[string]interface{})
-//		do.FVW["id"] = idE
-//		_, err = db.Delete(do, false)
-//		if err != nil {
-//			return i, 204, err
-//		}
-//	}
-//	return i, 200, nil
-//}

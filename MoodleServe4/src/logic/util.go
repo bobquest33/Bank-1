@@ -11,13 +11,14 @@ import (
 	"errors"
 )
 
-func OutPut(w http.ResponseWriter, v interface{}) error {
-	data, err := json.Marshal(v)
+func OutPut(w http.ResponseWriter, status int, msg string, data interface{}) error {
+	res := Result{ Status:status, Msg:msg, Data:data }
+	rd, err := json.Marshal(res)
 	if err != nil {
 		log.AddError(err)
 		return err
 	}
-	w.Write([]byte(data))
+	w.Write([]byte(rd))
 	return nil
 }
 
