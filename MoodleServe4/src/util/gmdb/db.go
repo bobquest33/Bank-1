@@ -38,7 +38,7 @@ func Init() {
 }
 
 func DbConfig() (confStr DbConfigInfo, err error) {
-	path := "/Users/tangs/IdeaProjects/MoodleServe4/src/util/gmdb/"
+	path := "/Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/"
 	f, err := os.Open(path + "configdb.xml")	//use with test gmdb
 	defer f.Close()
 	if err != nil {

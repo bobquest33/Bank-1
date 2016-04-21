@@ -41,3 +41,14 @@ func MDEB(db gmdb.DbController, ebm []Exam_Bank, status int) Result {
 	res.Data = length + 1
 	return  res
 }
+
+func MulDl(table string, ids []string, status int) Result {
+	//res := Result{}
+	//
+	//for i, v := range ids {
+	//	if  {
+	//
+	//	}
+	//}
+	return Result{}
+}

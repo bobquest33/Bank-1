@@ -37,7 +37,7 @@ func createLogFile(filename string) (*os.File, error) {
 }
 
 func defineLogType() error {
-	path := "/Users/tangs/IdeaProjects/MoodleServe4/src/util/log/"
+	path := "/Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/log/"
 	filename := path + "logTxt.txt"
 	fPtr, err :=  createLogFile(filename)
 	if err != nil {

@@ -6,7 +6,6 @@ import (
 	"util/gmdb"
 	"encoding/json"
 	"fmt"
-	"mydb"
 )
 
 type Result struct {
@@ -27,14 +26,22 @@ type UMP struct {
 	EbMap		map[string]CI
 	PgMap		map[string]CI
 	PMap		map[string]CI
+	QgMap		map[string]CI
+	QMap		map[string]CI
+	PqMap		map[string]CI
 }
 
 var ump UMP
 
 func Init() {
-	ump.EbMap = make(map[string]CI)
-	ump.PgMap = make(map[string]CI)
-	ump.PMap  = make(map[string]CI)
+	ump = UMP{
+		EbMap:make(map[string]CI),
+		PgMap:make(map[string]CI),
+		PMap :make(map[string]CI),
+		QgMap:make(map[string]CI),
+		QMap :make(map[string]CI),
+		PqMap:make(map[string]CI),
+	}
 }
 
 //define function name's prefix
@@ -112,9 +119,9 @@ func USebHandle(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	eb := Exam_Bank{}
-	err := json.Unmarshal([]byte(data), &data)
+	err := json.Unmarshal([]byte(data), &eb)
 	if err != nil {
-		log.AddError(err, fmt.Sprintf("%+v", eb))
+		log.AddError(err, fmt.Sprintf("%+v", data))
 		OutPut(w, 202, err.Error(), nil)
 		return
 	}
@@ -154,9 +161,9 @@ func DebHandle(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	ebm := []Exam_Bank{}
-	err := json.Unmarshal([]byte(data), &data)
+	err := json.Unmarshal([]byte(data), &ebm)
 	if err != nil {
-		log.AddError(err, fmt.Sprintf("%+v", ebm))
+		log.AddError(err, fmt.Sprintf("%+v", data))
 		OutPut(w, 202, err.Error(), nil)
 		return
 	}
@@ -223,7 +230,7 @@ func CpgHandle(w http.ResponseWriter, r *http.Request) {
 			log.AddWarning("Create papergrp id error", err.Error(), fmt.Sprintf("%+v", pg))
 			OutPut(w, 204, "Create papergrp id error." + err.Error(), nil)
 		} else {
-			ump.PgMap[pg.Id].I = CI{ C:true }
+			ump.PgMap[pg.Id] = CI{ C:true }
 			log.AddLog("Create papergrp id succeed", fmt.Sprintf("%+v", pg), uuid)
 			OutPut(w, 200, "Create papergrp id succeed", nil)
 		}
@@ -232,7 +239,7 @@ func CpgHandle(w http.ResponseWriter, r *http.Request) {
 
 func CSpgHandle(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
-	if data := r.FormValue("data"); data != nil {
+	if data := r.FormValue("data"); data == "" {
 		log.AddWarning("Create save papergrp but the papergrp is null")
 		OutPut(w, 201, "Create save papergrp but the papergrp is null", nil)
 	} else {
@@ -254,7 +261,7 @@ func CSpgHandle(w http.ResponseWriter, r *http.Request) {
 			} else {
 				db := gmdb.GetDb()
 				do := gmdb.DbOpera{ Table:gmdb.D_2, FV:pgm }
-				err = db.Insert(do)
+				_, err = db.Insert(do)
 			}
 			if err != nil {
 				log.AddError(err, pg)
@@ -291,8 +298,8 @@ func USpgHandle(w http.ResponseWriter, r *http.Request) {
 				db := gmdb.GetDb()
 				fvw := make(map[string]interface{})
 				fvw["id"] = pg.Id
-				do := mydb.DbOpera{ Table:gmdb.D_2, FV:pgm, FVW:fvw}
-				err = db.Update(do)
+				do := gmdb.DbOpera{ Table:gmdb.D_2, FV:pgm, FVW:fvw}
+				_, err = db.Update(do)
 			}
 			if err != nil {
 				log.AddError(err, pg)
@@ -311,7 +318,16 @@ func DpgHandle(w http.ResponseWriter, r *http.Request) {
 		log.AddWarning("Delete papergrp but the papergrp is null")
 		OutPut(w, 201, "Delete papergrp but the papergrp is null", nil)
 	} else {
-		
+		var err error
+		pg := Paper_Grp{}
+		if err = json.Unmarshal([]byte(data), &pg); err != nil {
+			log.AddError(err, data)
+			OutPut(w, 202, err.Error(), nil)
+		}
+		if !ump.PgMap[pg.Id].I {
+			log.AddWarning("Delete papergrp but the id isn't correct", pg)
+			OutPut(w, 203, "Delete papergrp but the id isn't correct", nil)
+		}
 	}
 }
 //
