@@ -6,6 +6,9 @@ import (
 	"util/gmdb"
 	"encoding/json"
 	"fmt"
+	"database/sql"
+	"io/ioutil"
+	"github.com/lib/pq/oid"
 )
 
 type Result struct {
@@ -42,6 +45,7 @@ func Init() {
 		QMap :make(map[string]CI),
 		PqMap:make(map[string]CI),
 	}
+	mapMapping(&ump)
 }
 
 //define function name's prefix
@@ -52,21 +56,23 @@ func Init() {
 
 func CebHandle(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
-	data := r.FormValue("data")
-	if data == "" {
-		//do something
-	}
-	db := gmdb.GetDb()
-	uuid, err := UGuid(db, gmdb.D_1)
-	if err != nil {
-		log.AddError("Exambank id create error", err)
-		OutPut(w, 201, "Exambank id create error", nil)
+	if r.Method == "GET" {
+		data := r.FormValue("data")
+		if data == "" {
+			//do something
+		}
+		db := gmdb.GetDb()
+		uuid, err := UGuid(db, gmdb.D_1)
+		if err != nil {
+			log.AddError("Exambank id create error", err)
+			OutPut(w, 201, "Exambank id create error", nil)
+			return
+		}
+		ump.EbMap[uuid] = CI{ C:true }
+		log.AddLog("Exambank id create succeed", uuid)
+		OutPut(w, 200, "Exambank id create succeed", uuid)
 		return
 	}
-	ump.EbMap[uuid] = CI{ C:true }
-	log.AddLog("Exambank id create succeed", uuid)
-	OutPut(w, 200, "Exambank id create succeed", uuid)
-	return
 }
 
 func CSebHanlde(w http.ResponseWriter, r *http.Request) {
@@ -97,15 +103,15 @@ func CSebHanlde(w http.ResponseWriter, r *http.Request) {
 		OutPut(w, 204, err.Error(), nil)
 		return
 	}
-	do := gmdb.DbOpera{ Table:gmdb.D_1, FV:fv }
+	do := gmdb.DbOpera{Table:gmdb.D_1, FV:fv }
 	_, err = db.Insert(do)
 	if err != nil {
 		log.AddError(err, fmt.Sprintf("%+v\n%+v", do, eb))
 		OutPut(w, 205, err.Error(), nil)
 		return
 	}
-	ump.EbMap[eb.Id] = CI{ C:false, I:true }
-	log.AddLog("Create exambank succeed",fmt.Sprintf("%+v", eb))
+	ump.EbMap[eb.Id] = CI{C:false, I:true }
+	log.AddLog("Create exambank succeed", fmt.Sprintf("%+v", eb))
 	OutPut(w, 200, "Create exambank succeed", nil)
 	return
 }
@@ -160,16 +166,41 @@ func DebHandle(w http.ResponseWriter, r *http.Request) {
 		OutPut(w, 201, "Delete exambank but the exambank is null", nil)
 		return
 	}
-	ebm := []Exam_Bank{}
-	err := json.Unmarshal([]byte(data), &ebm)
-	if err != nil {
-		log.AddError(err, fmt.Sprintf("%+v", data))
+	eb := Exam_Bank{}
+	if err := json.Unmarshal([]byte(data), &eb); err != nil {
+		log.AddError(err, data)
 		OutPut(w, 202, err.Error(), nil)
-		return
 	}
-	db := gmdb.GetDb()
-	res := MDEB(db, ebm, 203)
-	OutPut(w, res.Status, res.Msg, res.Data)
+	if !ump.EbMap[eb.Id].I {
+		log.AddWarning("Delete exambank but the id isn't correct", eb)
+		OutPut(w, 203, "Delete exambank but the is isn't correct", nil)
+	} else {
+		db := gmdb.GetDb()
+		fvw := make(map[string]interface{})
+		fvw["id"] = eb.Id
+		do := gmdb.DbOpera{
+			Table:gmdb.D_1,
+			FVW:fvw,
+		}
+		if _, err := db.Delete(do, false); err != nil {
+			log.AddError(err, do)
+			OutPut(w, 204, err.Error(), nil)
+		} else {
+			log.AddLog("Delete exambank succeed", eb)
+			OutPut(w, 200, "Delete exambank succeed", nil)
+			return
+		}
+	}
+	//ebm := []Exam_Bank{}
+	//err := json.Unmarshal([]byte(data), &ebm)
+	//if err != nil {
+	//	log.AddError(err, fmt.Sprintf("%+v", data))
+	//	OutPut(w, 202, err.Error(), nil)
+	//	return
+	//}
+	//db := gmdb.GetDb()
+	//res := MDEB(db, ebm, 203)
+	//OutPut(w, res.Status, res.Msg, res.Data)
 	return
 }
 
@@ -195,7 +226,7 @@ func ListExamBank(w http.ResponseWriter, r *http.Request) {
 		var eb Exam_Bank
 		err = rows.Scan(&eb.Id, &eb.Name, &eb.Type, &eb.Class, &eb.Create_Time, &eb.Remark, &eb.Status)
 		if err != nil {
-			log.AddError(err, eb)
+			log.AddError(err, eb, ebs, rows)
 			OutPut(w, 202, err.Error(), nil)
 			return
 		}
@@ -250,7 +281,7 @@ func CSpgHandle(w http.ResponseWriter, r *http.Request) {
 			OutPut(w, 202, err.Error(), nil)
 			return
 		}
-		if !ump.PgMap[pg.Exam_Bank_Id].C || !ump.EbMap[pg.Id].I {
+		if !ump.PgMap[pg.Exam_Bank_Id].I || !ump.EbMap[pg.Id].C {
 			log.AddWarning("Create save papergrp but the id or exam_bank_id isn't correct", pg)
 			OutPut(w, 203, "Create save papergrp but the id or exam_bank_id isn't correct", nil)
 		} else {
@@ -267,6 +298,7 @@ func CSpgHandle(w http.ResponseWriter, r *http.Request) {
 				log.AddError(err, pg)
 				OutPut(w, 205, err.Error(), nil)
 			} else {
+				ump.PgMap[pg.Id] = CI{ C:false, I:true }
 				log.AddLog("Create save papergrp succeed", pg)
 				OutPut(w, 200, "Create save papergrp succeed", nil)
 			}
@@ -324,9 +356,206 @@ func DpgHandle(w http.ResponseWriter, r *http.Request) {
 			log.AddError(err, data)
 			OutPut(w, 202, err.Error(), nil)
 		}
-		if !ump.PgMap[pg.Id].I {
-			log.AddWarning("Delete papergrp but the id isn't correct", pg)
-			OutPut(w, 203, "Delete papergrp but the id isn't correct", nil)
+		if !ump.PgMap[pg.Exam_Bank_Id].I || !ump.PgMap[pg.Id].I {
+			log.AddWarning("Delete papergrp but the id or exam_bank_id isn't correct", pg)
+			OutPut(w, 203, "Delete papergrp but the id or exam_bank id isn't correct", nil)
+		} else {
+			db := gmdb.GetDb()
+			fvw := make(map[string]interface{})
+			fvw["id"] = pg.Id
+			fvw["exam_bank_id"] = pg.Exam_Bank_Id
+			do := gmdb.DbOpera{ Table:gmdb.D_2, FVW:fvw }
+			if _, err := db.Delete(do, false); err != nil {
+				log.AddError(err, do)
+				OutPut(w, 204, err.Error(), nil)
+			} else {
+				ump.PgMap[pg.Id] = CI{ I:true }
+				log.AddLog("Delete papergrp succeed", pg)
+				OutPut(w, 200, "Delete papergrp succeed", nil)
+			}
+		}
+	}
+}
+func ListPaperGrp(w http.ResponseWriter, r *http.Request) {
+	if data, err := ioutil.ReadAll(r.Body); err != nil {
+	} else {
+		OutPut(w, 1, string(data), nil)
+	}
+	r.ParseForm()
+	if data := r.FormValue("data"); data == "" {
+		log.AddWarning("List papergrp but the papergrp is null")
+		OutPut(w, 201, "List papergrp but the papergrp is null", nil)
+	} else {
+		var err error
+		pg := Paper_Grp{}
+		if err = json.Unmarshal([]byte(data), &pg); err != nil {
+			log.AddError(err, data)
+			OutPut(w, 202, err.Error(), nil)
+		}
+		if !ump.EbMap[pg.Exam_Bank_Id].I {
+			log.AddWarning("List papergrp but the exam_bank_id isn't correct", pg)
+			OutPut(w, 203, "List papergrp but the exam_bank_id isn't correct", nil)
+		}
+		fv := make(map[string]interface{})
+		fv["exam_bank_id"] = pg.Exam_Bank_Id
+		pgm := []Paper_Grp{}
+		db := gmdb.GetDb()
+		do := gmdb.DbOpera{
+			Table:gmdb.D_2,
+			Name:[]string{"id", "name", "type", "exam_bank_id", "remark", "status"},
+			FV:fv,
+		}
+		var rows *sql.Rows
+		if rows, err = db.Query(do); err != nil {
+			log.AddError(err, do)
+			OutPut(w, 204, err.Error(), nil)
+		} else {
+			for rows.Next() {
+				pg := Paper_Grp{}
+				if err = rows.Scan(&pg.Id, &pg.Name, &pg.Type, &pg.Exam_Bank_Id, &pg.Remark, &pg.Status); err != nil {
+					log.AddError(err, pg, pgm, rows)
+					OutPut(w, 205, err.Error(), nil)
+				} else {
+					pgm = append(pgm, pg)
+				}
+			}
+			log.AddLog("List papergrp succeed", data, pgm)
+			OutPut(w, 200, "List papergrp succeed", pgm)
+		}
+	}
+}
+
+func CpHandle(w http.ResponseWriter, r *http.Request) {
+	p := PaperI{}
+	if err := UnmarshalJ(r, &p); err != nil {
+		log.AddError(err)
+		OutPut(w, 201, err.Error(), nil)
+		return
+	}
+	if !ump.PgMap[p.Paper_Grp_Id].I {
+		log.AddWarning("Create paper but the paper_grp_id isn't correct", p)
+		OutPut(w, 202, "Create paper but the paper_grp_id isn't correct", nil)
+	} else {
+		if uuid, err := Guid(); err == nil {
+			log.AddLog("Paper create id succeed", uuid)
+			OutPut(w, 200, "Paper create id succeed", uuid)
+		} else {
+			log.AddError(err, p)
+			OutPut(w, 203, err.Error(), nil)
+		}
+	}
+}
+
+func CSpHandle(w http.ResponseWriter, r *http.Request) {
+	p := PaperI{}
+	if err := UnmarshalJ(r, &p); err != nil {
+		log.AddError(err)
+		OutPut(w, 201, err.Error(), nil)
+		return
+	}
+	if !ump.PgMap[p.Paper_Grp_Id].I || !ump.PMap[p.Id].C {
+		log.AddWarning("Create save paper but the id or paper_id isn't correct", p)
+		OutPut(w, 202, "Create save paper but the id or paper_id isn't correct", nil)
+	} else {
+		if pm, err := JS2M(p, p); err != nil {
+			log.AddError(err, p)
+			OutPut(w, 203, err.Error(), nil)
+		} else {
+			db := gmdb.GetDb()
+			do := gmdb.DbOpera{ Table:gmdb.D_3, FV:pm }
+			if _, err := db.Insert(do); err != nil {
+				log.AddError(err, do)
+				OutPut(w, 204, err.Error(), nil)
+			} else {
+				log.AddLog("Create save paper succeed", p)
+				OutPut(w, 200 ,"Create save paper succeed", nil)
+			}
+		}
+	}
+}
+
+func USpHandle(w http.ResponseWriter, r *http.Request) {
+	p := PaperI{}
+	if err := UnmarshalJ(r, &p); err != nil {
+		log.AddError(err)
+		OutPut(w, 201, err.Error(), nil)
+		return
+	}
+	if !ump.PMap[p.Paper_Grp_Id].I || !ump.PgMap[p.Id].I {
+		log.AddWarning("Update save paper but the id or paper_grp_id isn't correct", p)
+		OutPut(w, 202, "Update save paper but the id or paper_grp_id isn't correct", nil)
+	} else {
+		if fv, err := JS2M(p, p); err == nil {
+			db := gmdb.GetDb()
+			fvw := make(map[string]interface{})
+			fvw["id"] = p.Id
+			do := gmdb.DbOpera{ Table:gmdb.D_3, FV:fv, FVW:fvw }
+			if _, err := db.Update(do); err != nil {
+				log.AddError(err, do)
+				OutPut(w, 203, err.Error(), nil)
+			} else {
+				log.AddLog("Update save paper succeed", p)
+				OutPut(w, 200, "Update save paper succeed", nil)
+			}
+		}
+	}
+}
+
+func DpHandle(w http.ResponseWriter, r *http.Request) {
+	p := Paper{}
+	if err := UnmarshalJ(r, &p); err != nil {
+		log.AddError(err)
+		OutPut(w, 201, err.Error(), nil)
+		return
+	}
+	if !ump.PMap[p.Id].I {
+		log.AddWarning("Delete paper but the id isn't correct")
+		OutPut(w, 202, "Delete paper but the id isn't correct", nil)
+	} else {
+		db := gmdb.GetDb()
+		fvw := make(map[string]interface{})
+		fvw["id"] = p.Id
+		do := gmdb.DbOpera{ Table:gmdb.D_3, FVW:fvw }
+		if _, err := db.Delete(do, false); err != nil {
+			log.AddError(err, p, do)
+			OutPut(w, 203, err.Error(), nil)
+		} else{
+			log.AddLog("Delete paper succeed", p)
+			OutPut(w, 200, "Delete paper succeed", nil)
+		}
+	}
+}
+
+func ListPaper(w http.ResponseWriter, r *http.Request) {
+	p := Paper{}
+	if err := UnmarshalJ(r, &p); err != nil {
+		log.AddError(err)
+		OutPut(w, 201, err.Error(), nil)
+		return
+	}
+	if !ump.PgMap[p.Paper_Grp_Id].I {
+		log.AddWarning("List paper but the id isn't correct", p)
+		OutPut(w, 202, "List paper but the id isn't correct", nil)
+	} else {
+		db := gmdb.GetDb()
+		pm := []Paper{}
+		fvw := make(map[string]interface{})
+		fvw["Paper_Grp_Id"] = p.Paper_Grp_Id
+		do := gmdb.DbOpera{
+			Table:gmdb.D_3,
+			Name:[]string{"id", "name", "paper_grp_id", "type", "ver", "create_time", "author", "composed_time", "remark", "status"},
+			FVW:fvw,
+		}
+		if rows, err := db.Query(do); err != nil {
+			for rows.Next() {
+				pt := Paper{}
+				if err = rows.Scan(&pt.Id,&pt.Name,&pt.Paper_Grp_Id,&pt.Type,&pt.Ver,&pt.Create_Time,&pt.Author,&pt.Composed_Time,&pt.Remark,&pt.Status); err != nil {
+					log.AddError(err, pt, pm, rows)
+					OutPut(w, 203, err.Error(), nil)
+				}
+			}
+			log.AddLog("List paper succeed", pm)
+			OutPut(w, 200, "List paper succeed", nil)
 		}
 	}
 }

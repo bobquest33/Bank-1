@@ -39,12 +39,22 @@ type Paper_Grp struct {
 type Paper struct {
 	Id					string               `json:"Id"`//试卷编码
 	Name				string            `json:"Name"`//试卷名称
-	Old_Name			string            `json:"Old_Name"`
 	Paper_Grp_Id		string               //隶属卷组编码
-	Paper_Grp_Name		string            `json:"Paper_Grp_Name"`//隶属卷组名字
 	Type				string            `json:"Type"`//试卷类型
 	Ver					string            `json:"Ver"`//试卷版本
 	Create_Time			string            `json:"Create_Time"`//创建时间
+	Author				int               `json:"Author"`//作者
+	Composed_Time		string            `json:"Composed_Time"`//组卷完成时间
+	Remark				string            `json:"Remark"`//备注
+	Status				string            `json:"Status"`//状态，见数据库模型
+}
+
+type PaperI struct {
+	Id					string               `json:"Id"`//试卷编码
+	Name				string            `json:"Name"`//试卷名称
+	Paper_Grp_Id		string               //隶属卷组编码
+	Type				string            `json:"Type"`//试卷类型
+	Ver					string            `json:"Ver"`//试卷版本
 	Author				int               `json:"Author"`//作者
 	Composed_Time		string            `json:"Composed_Time"`//组卷完成时间
 	Remark				string            `json:"Remark"`//备注

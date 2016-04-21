@@ -4,6 +4,10 @@ import (
 	"util/gmdb"
 	"errors"
 	"fmt"
+	"util/log"
+	"net/http"
+	"io/ioutil"
+	"encoding/json"
 )
 
 // equal true sign if != { return }
@@ -59,3 +63,59 @@ func F(prefix string, db gmdb.DbController, mapping map[string](Mapping), status
 	return 200, nil
 }
 
+func mapMapping(ump *UMP) {
+	var err error
+	db := gmdb.GetDb()
+	if ump.EbMap, err = GID(db, gmdb.D_1); err != nil {
+		log.AddError(err)
+		panic (err)
+	}
+	if ump.PgMap, err = GID(db, gmdb.D_2); err != nil {
+		log.AddError(err)
+		panic (err)
+	}
+	if ump.PMap, err = GID(db, gmdb.D_3); err != nil {
+		log.AddError(err)
+		panic (err)
+	}
+	if ump.QgMap, err = GID(db, gmdb.D_4); err != nil {
+		log.AddError(err)
+		panic (err)
+	}
+	if ump.QMap, err = GID(db, gmdb.D_5); err != nil {
+		log.AddError(err)
+		panic (err)
+	}
+	if ump.PqMap, err = GID(db, gmdb.D_6); err != nil {
+		log.AddError(err)
+		panic (err)
+	}
+}
+
+//get id mapping to database
+func GID(db gmdb.DbController, table string) (map[string]CI, error) {
+	var m map[string]CI
+	do := gmdb.DbOpera{ Table:table, Name:[]string{"id"} }
+	if rows, err := db.Query(do); err == nil {
+		for rows.Next() {
+			var id string
+			if err = rows.Scan(&id); err == nil {
+				m[id] = CI{ C:false, I:true }
+			} else {
+				return nil, err
+			}
+		}
+	}
+	return m, nil
+}
+
+func UnmarshalJ(r *http.Request, v interface{}) error {
+	data, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		return err
+	}
+	if err = json.Unmarshal([]byte(data), v); err != nil {
+		return err
+	}
+	return nil
+}
