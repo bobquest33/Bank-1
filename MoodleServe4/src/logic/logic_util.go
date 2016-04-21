@@ -95,6 +95,7 @@ func mapMapping(ump *UMP) {
 //get id mapping to database
 func GID(db gmdb.DbController, table string) (map[string]CI, error) {
 	var m map[string]CI
+	m = make(map[string]CI)
 	do := gmdb.DbOpera{ Table:table, Name:[]string{"id"} }
 	if rows, err := db.Query(do); err == nil {
 		for rows.Next() {

@@ -8,7 +8,6 @@ import (
 	"fmt"
 	"database/sql"
 	"io/ioutil"
-	"github.com/lib/pq/oid"
 )
 
 type Result struct {
@@ -56,23 +55,21 @@ func Init() {
 
 func CebHandle(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
-	if r.Method == "GET" {
-		data := r.FormValue("data")
-		if data == "" {
-			//do something
-		}
-		db := gmdb.GetDb()
-		uuid, err := UGuid(db, gmdb.D_1)
-		if err != nil {
-			log.AddError("Exambank id create error", err)
-			OutPut(w, 201, "Exambank id create error", nil)
-			return
-		}
-		ump.EbMap[uuid] = CI{ C:true }
-		log.AddLog("Exambank id create succeed", uuid)
-		OutPut(w, 200, "Exambank id create succeed", uuid)
+	data := r.FormValue("data")
+	if data == "" {
+		//do something
+	}
+	db := gmdb.GetDb()
+	uuid, err := UGuid(db, gmdb.D_1)
+	if err != nil {
+		log.AddError("Exambank id create error", err)
+		OutPut(w, 201, "Exambank id create error", nil)
 		return
 	}
+	ump.EbMap[uuid] = CI{ C:true }
+	log.AddLog("Exambank id create succeed", uuid)
+	OutPut(w, 200, "Exambank id create succeed", uuid)
+	return
 }
 
 func CSebHanlde(w http.ResponseWriter, r *http.Request) {
@@ -263,7 +260,7 @@ func CpgHandle(w http.ResponseWriter, r *http.Request) {
 		} else {
 			ump.PgMap[pg.Id] = CI{ C:true }
 			log.AddLog("Create papergrp id succeed", fmt.Sprintf("%+v", pg), uuid)
-			OutPut(w, 200, "Create papergrp id succeed", nil)
+			OutPut(w, 200, "Create papergrp id succeed", uuid)
 		}
 	}
 }
@@ -282,6 +279,12 @@ func CSpgHandle(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		if !ump.PgMap[pg.Exam_Bank_Id].I || !ump.EbMap[pg.Id].C {
+			for k, v := range ump.EbMap {
+				fmt.Println(k, v)
+			}
+			for k, v := range ump.PgMap {
+				fmt.Println(k, v)
+			}
 			log.AddWarning("Create save papergrp but the id or exam_bank_id isn't correct", pg)
 			OutPut(w, 203, "Create save papergrp but the id or exam_bank_id isn't correct", nil)
 		} else {

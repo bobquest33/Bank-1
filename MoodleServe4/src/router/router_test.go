@@ -20,7 +20,6 @@ func newQuestion() {
 		fmt.Println("Error1 ", err)
 		return
 	}
-	reg.Write("id=dldjlkjdakljfdlafjlfd")
 	form := url.Values{
 		"id":{"fdjljalfjdlajdlfjeojfjdaifdl"},
 	}
@@ -71,13 +70,11 @@ func TestRouter(t *testing.T) {
 	}
 	var idE string
 	var ok bool
-	if res.Status == 200 {
-		idE, ok = res.Data.(string)
-		if !ok {
-			t.Error("data type miss matched")
-		}
-		fmt.Println("exambank id get 1: ", idE)
+	idE, ok = res.Data.(string)
+	if !ok {
+		t.Error("data type miss matched")
 	}
+	fmt.Println("exambank id get 1: ", idE, res)
 	//create exambank
 	fmt.Println("ide is ", idE)
 	eb := logic.Exam_Bank{Id:idE, Name:"examTangs", Type:"common", Class:"Math", Remark:"Nothing", Status:"draft"}
@@ -374,8 +371,36 @@ func TestRouter(t *testing.T) {
 		t.Error(err)
 	}
 	fmt.Sprintf("%+v\n", res)
-
-	//---------------papergrp-------------------------------------------------------
-	//case 1
-	
+	////---------------papergrp-------------------------------------------------------
+	////case 1
+	//create papergrp
+	pg := logic.Paper_Grp{}
+	var idPg string
+	pg.Exam_Bank_Id = "9f3b7417c70e044659f72faaf04604bd"
+	if data, err = json.Marshal(pg); err != nil {
+		t.Error(err)
+	}
+	if str, err = NetConn("/createPaperGrp", url.Values{"data":{string(data)}}); err != nil {
+		t.Error(err)
+	}
+	if err := json.Unmarshal([]byte(str), &res); err != nil {
+		t.Error(err)
+	}
+	idPg, ok = res.Data.(string)
+	if !ok {
+		fmt.Sprintf("%+v", res)
+		t.Error("data format error")
+	} else {
+		fmt.Println(idPg)
+	}
+	//create save papergrp
+	pg = logic.Paper_Grp{Id:idPg, Name:"tangs", Type:"tl", Exam_Bank_Id:"13943fb24ca335cf96dc5624f1ccc64c", Remark:"tRemark", Status:"draft"}
+	if data, err = json.Marshal(pg); err != nil {
+		t.Error(err)
+	}
+	if str, err = NetConn("/csavePaperGrp", url.Values{"data":{string(data)}}); err != nil {
+		t.Error()
+	} else {
+		fmt.Sprintf("%+v", str)
+	}
 }
