@@ -53,11 +53,6 @@ func Init() {
 // D	Delete
 
 func CebHandle(w http.ResponseWriter, r *http.Request) {
-	r.ParseForm()
-	data := r.FormValue("data")
-	if data == "" {
-		//do something
-	}
 	db := gmdb.GetDb()
 	uuid, err := UGuid(db, gmdb.D_1)
 	if err != nil {
