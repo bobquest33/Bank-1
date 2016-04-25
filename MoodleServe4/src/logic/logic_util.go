@@ -110,13 +110,13 @@ func GID(db gmdb.DbController, table string) (map[string]CI, error) {
 	return m, nil
 }
 
-func UnmarshalJ(r *http.Request, v interface{}) error {
+func UnmarshalJ(r *http.Request, v interface{}) ([]byte, error) {
 	data, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		return err
+		return data, err
 	}
 	if err = json.Unmarshal([]byte(data), v); err != nil {
-		return err
+		return data, err
 	}
-	return nil
+	return data, nil
 }

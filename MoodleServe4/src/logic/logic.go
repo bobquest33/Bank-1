@@ -7,7 +7,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"database/sql"
-	"io/ioutil"
 )
 
 type Result struct {
@@ -179,13 +178,18 @@ func DebHandle(w http.ResponseWriter, r *http.Request) {
 			Table:gmdb.D_1,
 			FVW:fvw,
 		}
-		if _, err := db.Delete(do, false); err != nil {
+		if res, err := db.Delete(do, false); err != nil {
 			log.AddError(err, do)
 			OutPut(w, 204, err.Error(), nil)
 		} else {
+			delete(ump.EbMap, eb.Id)
 			log.AddLog("Delete exambank succeed", eb)
-			OutPut(w, 200, "Delete exambank succeed", nil)
-			return
+			if affected, err := res.RowsAffected	(); err == nil {
+				OutPut(w, 200, "Delete exambank succeed", affected)
+			} else {
+				log.AddError(err, res)
+				OutPut(w, 200, "Delete exambank succeed", nil)
+			}
 		}
 	}
 	//ebm := []Exam_Bank{}
@@ -258,7 +262,7 @@ func CpgHandle(w http.ResponseWriter, r *http.Request) {
 			log.AddWarning("Create papergrp id error", err.Error(), fmt.Sprintf("%+v", pg))
 			OutPut(w, 204, "Create papergrp id error." + err.Error(), nil)
 		} else {
-			ump.PgMap[pg.Id] = CI{ C:true }
+			ump.PgMap[uuid] = CI{ C:true }
 			log.AddLog("Create papergrp id succeed", fmt.Sprintf("%+v", pg), uuid)
 			OutPut(w, 200, "Create papergrp id succeed", uuid)
 		}
@@ -278,13 +282,7 @@ func CSpgHandle(w http.ResponseWriter, r *http.Request) {
 			OutPut(w, 202, err.Error(), nil)
 			return
 		}
-		if !ump.PgMap[pg.Exam_Bank_Id].I || !ump.EbMap[pg.Id].C {
-			for k, v := range ump.EbMap {
-				fmt.Println(k, v)
-			}
-			for k, v := range ump.PgMap {
-				fmt.Println(k, v)
-			}
+		if !ump.PgMap[pg.Id].C || !ump.EbMap[pg.Exam_Bank_Id].I {
 			log.AddWarning("Create save papergrp but the id or exam_bank_id isn't correct", pg)
 			OutPut(w, 203, "Create save papergrp but the id or exam_bank_id isn't correct", nil)
 		} else {
@@ -359,31 +357,31 @@ func DpgHandle(w http.ResponseWriter, r *http.Request) {
 			log.AddError(err, data)
 			OutPut(w, 202, err.Error(), nil)
 		}
-		if !ump.PgMap[pg.Exam_Bank_Id].I || !ump.PgMap[pg.Id].I {
+		if !ump.PgMap[pg.Id].I {
 			log.AddWarning("Delete papergrp but the id or exam_bank_id isn't correct", pg)
 			OutPut(w, 203, "Delete papergrp but the id or exam_bank id isn't correct", nil)
 		} else {
 			db := gmdb.GetDb()
 			fvw := make(map[string]interface{})
 			fvw["id"] = pg.Id
-			fvw["exam_bank_id"] = pg.Exam_Bank_Id
 			do := gmdb.DbOpera{ Table:gmdb.D_2, FVW:fvw }
-			if _, err := db.Delete(do, false); err != nil {
+			if res, err := db.Delete(do, false); err != nil {
 				log.AddError(err, do)
 				OutPut(w, 204, err.Error(), nil)
 			} else {
-				ump.PgMap[pg.Id] = CI{ I:true }
+				delete(ump.PgMap, pg.Id)
 				log.AddLog("Delete papergrp succeed", pg)
-				OutPut(w, 200, "Delete papergrp succeed", nil)
+				if affected, err := res.RowsAffected(); err == nil {
+					OutPut(w, 200, "Delete papergrp succeed", affected)
+				} else {
+					log.AddError(err, res)
+					OutPut(w, 200, "Delete papergrp succeed", affected)
+				}
 			}
 		}
 	}
 }
 func ListPaperGrp(w http.ResponseWriter, r *http.Request) {
-	if data, err := ioutil.ReadAll(r.Body); err != nil {
-	} else {
-		OutPut(w, 1, string(data), nil)
-	}
 	r.ParseForm()
 	if data := r.FormValue("data"); data == "" {
 		log.AddWarning("List papergrp but the papergrp is null")
@@ -429,9 +427,10 @@ func ListPaperGrp(w http.ResponseWriter, r *http.Request) {
 }
 
 func CpHandle(w http.ResponseWriter, r *http.Request) {
+	//r.ParseForm()
 	p := PaperI{}
-	if err := UnmarshalJ(r, &p); err != nil {
-		log.AddError(err)
+	if rBody, err := UnmarshalJ(r, &p); err != nil {
+		log.AddError(err,string(rBody))
 		OutPut(w, 201, err.Error(), nil)
 		return
 	}
@@ -440,6 +439,7 @@ func CpHandle(w http.ResponseWriter, r *http.Request) {
 		OutPut(w, 202, "Create paper but the paper_grp_id isn't correct", nil)
 	} else {
 		if uuid, err := Guid(); err == nil {
+			ump.PMap[uuid] = CI{ C:true, I:false }
 			log.AddLog("Paper create id succeed", uuid)
 			OutPut(w, 200, "Paper create id succeed", uuid)
 		} else {
@@ -450,19 +450,27 @@ func CpHandle(w http.ResponseWriter, r *http.Request) {
 }
 
 func CSpHandle(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+
+	data := r.FormValue("data")
 	p := PaperI{}
-	if err := UnmarshalJ(r, &p); err != nil {
-		log.AddError(err)
-		OutPut(w, 201, err.Error(), nil)
-		return
+	if data == "" {
+		log.AddWarning("Create save paper but the paper is null")
+		OutPut(w, 201, "Create save paper but the paper is null", nil)
+	} else {
+		if err := json.Unmarshal([]byte(data), &p); err != nil {
+			log.AddError(err, data)
+			OutPut(w, 202, err.Error(), nil)
+			return
+		}
 	}
 	if !ump.PgMap[p.Paper_Grp_Id].I || !ump.PMap[p.Id].C {
 		log.AddWarning("Create save paper but the id or paper_id isn't correct", p)
-		OutPut(w, 202, "Create save paper but the id or paper_id isn't correct", nil)
+		OutPut(w, 203, "Create save paper but the id or paper_id isn't correct", nil)
 	} else {
 		if pm, err := JS2M(p, p); err != nil {
 			log.AddError(err, p)
-			OutPut(w, 203, err.Error(), nil)
+			OutPut(w, 204, err.Error(), nil)
 		} else {
 			db := gmdb.GetDb()
 			do := gmdb.DbOpera{ Table:gmdb.D_3, FV:pm }
@@ -470,6 +478,7 @@ func CSpHandle(w http.ResponseWriter, r *http.Request) {
 				log.AddError(err, do)
 				OutPut(w, 204, err.Error(), nil)
 			} else {
+				ump.PMap[p.Id] = CI{ C:false, I:true }
 				log.AddLog("Create save paper succeed", p)
 				OutPut(w, 200 ,"Create save paper succeed", nil)
 			}
@@ -479,14 +488,21 @@ func CSpHandle(w http.ResponseWriter, r *http.Request) {
 
 func USpHandle(w http.ResponseWriter, r *http.Request) {
 	p := PaperI{}
-	if err := UnmarshalJ(r, &p); err != nil {
-		log.AddError(err)
-		OutPut(w, 201, err.Error(), nil)
+	var data string
+	if data = r.FormValue("data"); data == "" {
+		log.AddWarning("Updata save paper but the paper is null")
+		OutPut(w, 201, "Update save paper but the paper is null", nil)
 		return
 	}
-	if !ump.PMap[p.Paper_Grp_Id].I || !ump.PgMap[p.Id].I {
+	if err := json.Unmarshal([]byte(data), &p); err != nil {
+		log.AddError(err, data)
+		OutPut(w, 202, err.Error(), nil)
+		return
+	}
+	if !ump.PMap[p.Id].I || !ump.PgMap[p.Paper_Grp_Id].I {
 		log.AddWarning("Update save paper but the id or paper_grp_id isn't correct", p)
 		OutPut(w, 202, "Update save paper but the id or paper_grp_id isn't correct", nil)
+		fmt.Println(ump.PMap,  ump.PgMap)
 	} else {
 		if fv, err := JS2M(p, p); err == nil {
 			db := gmdb.GetDb()
@@ -506,8 +522,8 @@ func USpHandle(w http.ResponseWriter, r *http.Request) {
 
 func DpHandle(w http.ResponseWriter, r *http.Request) {
 	p := Paper{}
-	if err := UnmarshalJ(r, &p); err != nil {
-		log.AddError(err)
+	if rBody, err := UnmarshalJ(r, &p); err != nil {
+		log.AddError(err, string(rBody))
 		OutPut(w, 201, err.Error(), nil)
 		return
 	}
@@ -519,20 +535,26 @@ func DpHandle(w http.ResponseWriter, r *http.Request) {
 		fvw := make(map[string]interface{})
 		fvw["id"] = p.Id
 		do := gmdb.DbOpera{ Table:gmdb.D_3, FVW:fvw }
-		if _, err := db.Delete(do, false); err != nil {
+		if res, err := db.Delete(do, false); err != nil {
 			log.AddError(err, p, do)
 			OutPut(w, 203, err.Error(), nil)
 		} else{
-			log.AddLog("Delete paper succeed", p)
-			OutPut(w, 200, "Delete paper succeed", nil)
+			ump.PMap[p.Id] = CI{ C:false, I:false }
+			if affected, err := res.RowsAffected(); err == nil {
+				log.AddLog("Delete paper succeed", p, affected)
+				OutPut(w, 200, "Delete paper succeed", affected)
+			} else {
+				log.AddError(err, res)
+				OutPut(w, 200, "Delete paper succeed", nil)
+			}
 		}
 	}
 }
 
 func ListPaper(w http.ResponseWriter, r *http.Request) {
 	p := Paper{}
-	if err := UnmarshalJ(r, &p); err != nil {
-		log.AddError(err)
+	if rBody, err := UnmarshalJ(r, &p); err != nil {
+		log.AddError(err, string(rBody))
 		OutPut(w, 201, err.Error(), nil)
 		return
 	}
@@ -562,226 +584,502 @@ func ListPaper(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 }
-//
-//func CpgHandle(w http.ResponseWriter, r *http.Request) {
-//	r.ParseForm()
-//
-//	res := Result{
-//		Status:200,
-//	}
-//	data := r.FormValue("data")
-//	if data == "" {
-//		log.AddWarning("Create papergrp but the papergrp is null")
-//		res.Status = 201
-//		res.Msg = "Create papergrp but the papergrp is null"
-//		OutPut(w, res)
-//		return
-//	}
-//	pg := Paper_Grp{}
-//	err := json.Unmarshal([]byte(data), &pg)
-//	if err != nil {
-//		log.AddError(err, fmt.Sprintf("%+v", pg))
-//		res.Status = 202
-//		res.Msg = err.Error()
-//		OutPut(w, res)
-//		return
-//	}
-//	db := gmdb.GetDb()
-//	idE, err := FindId(db.Mdb, gmdb.D_2, pg.Exam_Bank_Id)
-//	if err != nil {
-//		log.AddError(err, fmt.Sprintf("%+v", pg))
-//		res.Status = 203
-//		res.Msg = err.Error()
-//		OutPut(w, res)
-//		return
-//	}
-//	if idE == "" {
-//		log.AddWarning("Create paper but paper's exam_bank_id is not exist")
-//		res.Status = 204
-//		res.Msg = "Create paper but paper's exam_bank_id is not exist"
-//		OutPut(w, res)
-//		return
-//	}
-//	uuid, err := UGuid(db, gmdb.D_2)
-//	if err != nil {
-//		log.AddError(err)
-//		res.Status = 205
-//		res.Msg = err.Error()
-//		OutPut(w, res)
-//		return
-//	}
-//	log.AddLog("Papergrp id create succeed", uuid)
-//	res.Msg = "Papergrp id create succeed"
-//	res.Data = uuid
-//	OutPut(w, res)
-//	return
-//}
-//
-//func CSpgHandle(w http.ResponseWriter, r *http.Request) {
-//	r.ParseForm()
-//
-//	res := Result{ Status:200 }
-//	data := r.FormValue("data")
-//	if data == "" {
-//		log.AddWarning("Create save papergrp but the papergrp is null")
-//		res.Status = 201
-//		res.Msg = "Create save papergrp but the papergrp is null"
-//		OutPut(w, res)
-//		return
-//	}
-//	pg := Paper_Grp{}
-//	err := json.Unmarshal([]byte(data), &pg)
-//	if err != nil {
-//		log.AddError(err)
-//		res.Status = 202
-//		res.Msg = err.Error()
-//		OutPut(w, res)
-//		return
-//	}
-//	db := gmdb.GetDb()
-//	idE, err := FindId(db.Mdb, gmdb.D_1, pg.Exam_Bank_Id)
-//	if err != nil {
-//		log.AddError(err, fmt.Sprintf("%+v", pg))
-//		res.Status = 203
-//		res.Msg = err.Error()
-//		OutPut(w, res)
-//		return
-//	}
-//	if idE == "" {
-//		log.AddWarning("Create save papergrp but papergrp's exam_bank_id is not exist", fmt.Sprintf("%+v\n  Find id %s", pg, idE))
-//		res.Status = 204
-//		res.Msg = "Create save papergrp but papergrp's exam_bank_id is not exist"
-//		OutPut(w, res)
-//		return
-//	}
-//	idPg, err := FindId(db.Mdb, gmdb.D_2, pg.Id)
-//	if err != nil {
-//		log.AddError(err, fmt.Sprintf("%+v", pg))
-//		res.Status = 205
-//		res.Msg = err.Error()
-//		OutPut(w, res)
-//		return
-//	}
-//	if idPg != "" {
-//		log.AddWarning("Create save papergrp but the papergrp's id is already exist", fmt.Sprintf("%+v\n Find id %s", pg, idPg))
-//		res.Status = 206
-//		res.Msg = "Create save papergrp but the papergrp's id is already exist"
-//		OutPut(w, res)
-//		return
-//	}
-//	fv, err := JS2M(pg, pg)
-//	if err != nil {
-//		log.AddError(err, fmt.Sprintf("%+v\n%+v", pg, fv))
-//		res.Status = 207
-//		res.Msg = err.Error()
-//		OutPut(w, res)
-//		return
-//	}
-//	do := gmdb.DbOpera{ Table:gmdb.D_2, FV:fv }
-//	_, err = db.Insert(do)
-//	if err != nil {
-//		log.AddError(err, fmt.Sprintf("%+v\n%+v", pg, do))
-//		res.Status = 208
-//		res.Msg = err.Error()
-//		OutPut(w, res)
-//		return
-//	}
-//	log.AddLog("Create papergrp succeed", fmt.Sprintf("%+v", do))
-//	res.Msg = "Create papergrp succeed"
-//	OutPut(w, res)
-//	return
-//}
-//
-//func USpgHandle(w http.ResponseWriter, r *http.Request) {
-//	r.ParseForm()
-//
-//	res := Result{ Status:200 }
-//	data := r.FormValue("data")
-//	if data == "" {
-//		log.AddWarning("Update save papergrp but the papergrp is null")
-//		res.Status = 201
-//		res.Msg = "Update save papergrp but the papergrp is null"
-//		OutPut(w, res)
-//		return
-//	}
-//	pg := Paper_Grp{}
-//	err := json.Unmarshal([]byte(data), &pg)
-//	if err != nil {
-//		log.AddError(err)
-//		res.Status = 202
-//		res.Msg = err.Error()
-//		OutPut(w, res)
-//		return
-//	}
-//	db := gmdb.GetDb()
-//	idE, err := FindId(db.Mdb, gmdb.D_1, pg.Exam_Bank_Id)
-//	if err != nil {
-//		log.AddError(err, fmt.Sprintf("%+v", pg))
-//		res.Status = 203
-//		res.Msg = err.Error()
-//		OutPut(w, res)
-//		return
-//	}
-//	if idE == "" {
-//		log.AddWarning("Update save papergrp but papergrp's exam_bank_id is not exist", fmt.Sprintf("%+v\n  Find id %s", pg, idE))
-//		res.Status = 204
-//		res.Msg = "Update save papergrp but papergrp's exam_bank_id is not exist"
-//		OutPut(w, res)
-//		return
-//	}
-//	idPg, err := FindId(db.Mdb, gmdb.D_2, pg.Id)
-//	if err != nil {
-//		log.AddError(err, fmt.Sprintf("%+v", pg))
-//		res.Status = 205
-//		res.Msg = err.Error()
-//		OutPut(w, res)
-//		return
-//	}
-//	if idPg == "" {
-//		log.AddWarning("Update save papergrp but the papergrp's id is not exist", fmt.Sprintf("%+v\n Find id %s", pg, idPg))
-//		res.Status = 206
-//		res.Msg = "Update save papergrp but the papergrp's id is not exist"
-//		OutPut(w, res)
-//		return
-//	}
-//	fv, err := JS2M(pg, pg)
-//	if err != nil {
-//		log.AddError(err, fmt.Sprintf("%+v\n%+v", pg, fv))
-//		res.Status = 207
-//		res.Msg = err.Error()
-//		OutPut(w, res)
-//		return
-//	}
-//	fvw := make(map[string]interface{})
-//	fvw["Id"] = pg.Id
-//	do := gmdb.DbOpera{ Table:gmdb.D_2, FV:fv, FVW:fvw }
-//	_, err = db.Update(do)
-//	if err != nil {
-//		log.AddError(err, fmt.Sprintf("%+v\n%+v", pg, do))
-//		res.Status = 208
-//		res.Msg = err.Error()
-//		OutPut(w, res)
-//		return
-//	}
-//	log.AddLog("Update papergrp succeed", fmt.Sprintf("%+v", do))
-//	res.Msg = "Update papergrp succeed"
-//	OutPut(w, res)
-//	return
-//}
-//
-//func DpgHandle(w http.ResponseWriter, r *http.Request) {
-//	r.ParseForm()
-//
-//	res := Result{ Status:200 }
-//	data := r.FormValue("data")
-//	if data == "" {
-//		log.AddWarning("Delete papergrp but the papergrp is null")
-//		res.Status = 201
-//		res.Msg = "Delete papergrp but the papergrp is null"
-//		OutPut(w, res)
-//		return
-//	}
-//}
-//func ListPaperGrp(w http.ResponseWriter, r *http.Request) {
-//
-//}
+
+type Te struct {
+	Name		string
+	Bank		string
+}
+func C(w http.ResponseWriter, r *http.Request) {
+	var te Te
+	if data, err := UnmarshalJ(r, &te); err != nil {
+		log.AddError(err, string(data))
+		OutPut(w, 201, err.Error(), nil)
+	} else {
+		log.AddLog(data)
+		if err = json.Unmarshal(data, &te); err == nil {
+			fmt.Println(te)
+		}
+		fmt.Println(te, string(data))
+		tt := Te{Name:"tang", Bank:"aa"}
+		if ted, err := json.Marshal(tt); err == nil {
+			OutPut(w, 200, "", string(ted))
+		} else {
+			log.AddError(err.Error())
+			OutPut(w, 202, err.Error(), nil)
+		}
+	}
+}
+func CqgHandle(w http.ResponseWriter, r *http.Request) {
+	qg := Question_Grp{}
+	if data, err := UnmarshalJ(r, &qg); err != nil {
+		log.AddError(err, string(data))
+		OutPut(w, 201, err.Error(), nil)
+		return
+	}
+	if !ump.PMap[qg.Paper_Id].I {
+		log.AddWarning("Create question_grp but the paper_id isn't correct", qg)
+		OutPut(w, 202, "Create question_grp but the paper_id isn't correct", nil)
+	} else {
+		if uuid, err := Guid(); err == nil {
+			ump.QgMap[uuid] = CI{ C:true }
+			log.AddLog("Question_Grp create id succeed", uuid)
+			OutPut(w, 200, "Question_Grp create id succeed", uuid)
+		} else {
+			log.AddError(err, qg)
+			OutPut(w, 203, err.Error(), nil)
+		}
+	}
+}
+func CSqgHandle(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	var data string
+	qg := Question_Grp{}
+	if data = r.FormValue("data"); data == "" {
+		log.AddWarning("Create save question_grp but the question_grp is null")
+		OutPut(w, 201, "Create save question_grp but the question_grp is null", nil)
+	} else {
+		if err := json.Unmarshal([]byte(data), &qg); err != nil {
+			log.AddError(err, data)
+			OutPut(w, 202, err.Error(), nil)
+			return
+		}
+	}
+	if !ump.QgMap[qg.Id].C || !ump.PMap[qg.Paper_Id].I {
+		log.AddError("Create save question_grp but the id or paper_id isn't correct", qg)
+		OutPut(w, 203, "Create save question_grp but the id or paper_id isn't correct", nil)
+	} else {
+		db := gmdb.GetDb()
+		if fv, err := JS2M(qg, qg); err != nil {
+			log.AddError(err, qg)
+			OutPut(w, 204, err.Error(), nil)
+		} else {
+			do := gmdb.DbOpera{ Table:gmdb.D_4, FV:fv }
+			if _, err := db.Insert(do); err != nil {
+				log.AddError(err, do, qg)
+				OutPut(w, 205, err.Error(), nil)
+			} else {
+				ump.QgMap[qg.Id] = CI{ I:true }
+				log.AddLog("Create save question_grp succeed", qg)
+				OutPut(w, 200, "Create save question_grp succeed", nil)
+			}
+		}
+	}
+}
+func USqgHandle(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	qg := Question_Grp{}
+	if data := r.FormValue("data"); data == "" {
+		log.AddWarning("Update save question_grp but the question_grp is null")
+		OutPut(w, 201, "Update save question_grp but the question_grp is null", nil)
+	} else {
+		if err := json.Unmarshal([]byte(data), &qg); err != nil {
+			log.AddError(err, data)
+			OutPut(w, 202, err.Error(), nil)
+			return
+		}
+	}
+	if !ump.QgMap[qg.Id].I || !ump.PMap[qg.Paper_Id].I {
+		log.AddWarning("Updata save question_grp but the id or paper_id isn't correct", qg)
+		OutPut(w, 203, "Update save question_grp but the id or paper_id isn't correct", nil)
+	} else {
+		db := gmdb.GetDb()
+		fvw := make(map[string]interface{})
+		fvw["id"] = qg.Id
+		if fv, err := JS2M(qg, qg); err != nil {
+			log.AddError(err, qg)
+			OutPut(w, 204, err.Error(), nil)
+		} else {
+			do := gmdb.DbOpera{ Table:gmdb.D_4, FV:fv, FVW:fvw }
+			if _, err = db.Update(do); err != nil {
+				log.AddError(err, do, qg)
+				OutPut(w, 205, err.Error(), nil)
+			} else {
+				log.AddLog("Update save question_grp succeed", qg)
+				OutPut(w, 200, "Update save question_grp succeed", nil)
+			}
+		}
+	}
+}
+func DqgHandle(w http.ResponseWriter, r *http.Request) {
+	qg := Question_Grp{}
+	if data, err := UnmarshalJ(r, &qg); err != nil {
+		log.AddError(err, string(data))
+		OutPut(w, 201, err.Error(), nil)
+	} else {
+		if !ump.QgMap[qg.Id].I {
+			log.AddWarning("Delete question_grp but the id isn't correct", qg)
+			OutPut(w, 202, "Detele quesiton_grp but the id isn't correct", nil)
+			return
+		}
+	}
+	db := gmdb.GetDb()
+	fvw := make(map[string]interface{})
+	fvw["id"] = qg.Id
+	do := gmdb.DbOpera{ Table:gmdb.D_4, FVW:fvw }
+	if res, err := db.Delete(do, false); err != nil {
+		log.AddError(err, do, qg)
+		OutPut(w, 203, err.Error(), nil)
+	} else {
+		delete(ump.QgMap, qg.Id)
+		items, err := res.RowsAffected()
+		log.AddLog("Delete question_grp succeed", qg, items)
+		if err != nil {
+			log.AddError("Delete question_grp succeed but affected items error", err, qg, res)
+		}
+		OutPut(w, 200, "Delete question_grp succeed", items)
+	}
+}
+func ListQuestionGrp(w http.ResponseWriter, r *http.Request) {
+	qg := Question_Grp{}
+	if data, err := UnmarshalJ(r, &qg); err != nil {
+		log.AddError(err, string(data))
+		OutPut(w, 201, err.Error(), nil)
+	} else {
+		if !ump.PMap[qg.Paper_Id].I {
+			log.AddWarning("List question_grp but the paper_id isn't correct", data)
+			OutPut(w, 202, "List question_grp but the paper_id isn't correct", nil)
+			return
+		}
+	}
+	db := gmdb.GetDb()
+	fvw := make(map[string]interface{})
+	fvw["paper_id"] = qg.Paper_Id
+	do := gmdb.DbOpera{
+		Table:gmdb.D_4,
+		Name:[]string{"id", "type", "name", "paper_id", "desc", "score", "position", "remark", "status"},
+		FVW:fvw,
+	}
+	qgm := []Question_Grp{}
+	if rows, err := db.Query(do); err == nil {
+		for rows.Next() {
+			qgt := Question_Grp{}
+			if err = rows.Scan(&qgt.Id, &qgt.Type, &qgt.Name, &qgt.Paper_Id, &qgt.Desc, &qgt.Score, &qgt.Position, &qgt.Remark, &qgt.Status); err != nil {
+				log.AddError(err, rows, qg)
+				OutPut(w, 203, err.Error(), nil)
+				return
+			}
+			qgm = append(qgm, qgt)
+		}
+		log.AddLog("List question_grp succeed", qg, qgm)
+		OutPut(w, 200, "List question_grp succeed", qgm)
+	} else {
+		log.AddError(err, do, qg)
+		OutPut(w, 203, err.Error(), nil)
+	}
+}
+func CpqHandle(w http.ResponseWriter, r *http.Request) {
+	var pq Paper_Question
+	if data, err := UnmarshalJ(r, &pq); err != nil {
+		log.AddError(err, string(data))
+		OutPut(w, 201, err.Error(), nil)
+	} else {
+		if !ump.QMap[pq.Question_Id].I || !ump.QgMap[pq.Question_Grp_Id].I {
+			log.AddWarning("Create paper_question but the question_id or question_grp_id isn't correct", pq)
+			OutPut(w, 202, "Create paper_question but the question_id or question_grp_id isn't correct", nil)
+			return
+		}
+	}
+	if uuid, err := Guid(); err != nil {
+		log.AddError(err, pq)
+		OutPut(w, 203, err.Error(), nil)
+	} else {
+		ump.PqMap[uuid] = CI{ C:true }
+		log.AddLog("Paper_question create id succeed", uuid)
+		OutPut(w, 200, "Paper_question create id succeed", uuid)
+	}
+
+}
+func CSpqHandle(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	var pq Paper_Question
+	if data := r.FormValue("data"); data == "" {
+		log.AddWarning("Create save paper_question but the paper_question is null")
+		OutPut(w, 201, "Create save paper_question but the paper_question is null", nil)
+	} else {
+		if err := json.Unmarshal([]byte(data), &pq); err != nil {
+			log.AddError(err, data)
+			OutPut(w, 202, err.Error(), nil)
+		} else {
+			if !ump.PqMap[pq.Id].C || !ump.QMap[pq.Question_Id].I || !ump.QgMap[pq.Question_Grp_Id].I {
+				log.AddWarning("Create save paper_question but the id or question_id or question_grp_id isn't correct", pq)
+				OutPut(w, 203, "Create save paper_question but the id or question_id or questoin_grp_id isn't correct", nil)
+				return
+			}
+		}
+	}
+	if fv, err := JS2M(pq, pq); err != nil {
+		log.AddError(err, pq)
+		OutPut(w, 204, err.Error(), nil)
+	} else {
+		db := gmdb.GetDb()
+		do := gmdb.DbOpera{ Table:gmdb.D_6, FV:fv }
+		if _,err = db.Insert(do); err != nil {
+			log.AddError(err, do, pq)
+			OutPut(w, 205, err.Error(), nil)
+		} else {
+			ump.PqMap[pq.Id] = CI{ I:true }
+			log.AddLog("Create save paper_question succeed", pq)
+			OutPut(w, 200, "Create save paper_question succeed", nil)
+		}
+	}
+
+}
+func USpqHandle(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	var pq Paper_Question
+	if data := r.FormValue("data"); data == "" {
+		log.AddWarning("Update save paper_question but the paper_question is null")
+		OutPut(w, 201, "Update save paper_question but the paper_question is null", nil)
+	} else {
+		if err := json.Unmarshal([]byte(data), &pq); err != nil {
+			log.AddError(err, data)
+			OutPut(w, 202, err.Error(), nil)
+		} else {
+			if !ump.PqMap[pq.Id].I || !ump.QMap[pq.Question_Id].I || !ump.QgMap[pq.Question_Grp_Id].I {
+				log.AddWarning("Update save paper_question but the id or question_id or question_grp_id isn't correct", pq)
+				OutPut(w, 203, "Update save paper_question but the id or question_id or questoin_grp_id isn't correct", nil)
+				return
+			}
+		}
+	}
+	if fv, err := JS2M(pq, pq); err != nil {
+		log.AddError(err, pq)
+		OutPut(w, 204, err.Error(), nil)
+	} else {
+		db := gmdb.GetDb()
+		fvw := make(map[string]interface{})
+		fvw["id"] = pq.Id
+		do := gmdb.DbOpera{ Table:gmdb.D_6, FV:fv, FVW:fvw }
+		if _, err = db.Update(do); err != nil {
+			log.AddError(err, do, pq)
+			OutPut(w, 205, err.Error(), nil)
+		} else {
+			log.AddLog("Update save paper_question succeed", pq)
+			OutPut(w, 200, "Update save paper_question succeed", nil)
+		}
+	}
+}
+func DpqHandle(w http.ResponseWriter, r *http.Request) {
+	var pq Paper_Question
+	if data, err := UnmarshalJ(r, &pq); err != nil {
+		log.AddError(err, string(data))
+		OutPut(w, 201, err.Error(), nil)
+	} else {
+		if !ump.PqMap[pq.Id].I {
+			log.AddWarning("Delete paper_question but the id isn't correct", pq)
+			OutPut(w, 202, "Delete paper_question but the id isn't correct", nil)
+			return
+		}
+	}
+	fvw := make(map[string]interface{})
+	fvw["id"] = pq.Id
+	do := gmdb.DbOpera{ Table:gmdb.D_6, FVW:fvw }
+	db := gmdb.GetDb()
+	if res, err := db.Delete(do, false); err != nil {
+		log.AddError(err, res, pq)
+		OutPut(w, 203, err.Error(), nil)
+	} else {
+		delete(ump.PqMap, pq.Id)
+		items, err := res.RowsAffected()
+		log.AddLog("Delete paper_question succeed", items, pq)
+		if err != nil {
+			log.AddError("Delete paper_question succeed but affected items error", res, pq, items)
+		}
+		OutPut(w, 200, "Delete paper_question succeed", items)
+	}
+}
+func ListPaperQuestion(w http.ResponseWriter, r *http.Request) {
+	var pq Paper_Question
+	if data, err := UnmarshalJ(r, &pq); err != nil {
+		log.AddError(err, string(data))
+		OutPut(w, 201, err.Error(), nil)
+	} else {
+		if !ump.QgMap[pq.Question_Grp_Id].I {
+			log.AddWarning("List paper_question but the question_grp_id isn't correct", pq)
+			OutPut(w, 202, "List paper_question but the question_grp_id isn't correct", nil)
+			return
+		}
+	}
+	fvw := make(map[string]interface{})
+	fvw["question_grp_id"] = pq.Question_Grp_Id
+	do := gmdb.DbOpera{
+		Table:gmdb.D_6,
+		Name:[]string{"id", "question_id", "question_grp_id", "score", "position", "required", "remark", "status" },
+		FVW:fvw,
+	}
+	db := gmdb.GetDb()
+	qm := []Paper_Question{}
+	if rows, err := db.Query(do); err != nil {
+		log.AddError(err, do, pq)
+		OutPut(w, 203, err.Error(), nil)
+	} else {
+		for rows.Next() {
+			qt := Paper_Question{}
+			if err = rows.Scan(&qt.Id,&qt.Question_Id,&qt.Question_Grp_Id,&qt.Score,&qt.Position,&qt.Required,&qt.Remark,&qt.Status); err != nil {
+				log.AddError(err, rows, pq)
+				OutPut(w, 204, err.Error(), nil)
+			}
+			qm = append(qm, qt)
+		}
+		log.AddLog("List paper_question succeed", pq, qm)
+		OutPut(w, 200, "List paper_question succeed", qm)
+	}
+}
+func CqHandle(w http.ResponseWriter, r *http.Request) {
+	q := Question{}
+	if data, err := UnmarshalJ(r, &q); err != nil {
+		log.AddError(err, string(data))
+		OutPut(w, 201, err.Error(), nil)
+	} else {
+		if !ump.EbMap[q.Exam_Bank_Id].I {
+			log.AddWarning("Create question but the exam_bank_id isn't correct", data)
+			OutPut(w, 202, "Create question but the exam_bank_id isn't correct", nil)
+			return
+		}
+	}
+	if uuid, err := Guid(); err != nil {
+		log.AddError(err, uuid, q)
+		OutPut(w, 203, err.Error(), nil)
+	} else {
+		ump.QMap[uuid] = CI{ C:true }
+		log.AddLog("Question create id succeed", uuid)
+		OutPut(w, 200, "Question create id succeed", uuid)
+	}
+}
+func CSqHandle(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	q := Question{}
+	if data := r.FormValue("data"); data == "" {
+		log.AddWarning("Create save question but the question is null")
+		OutPut(w, 201, "Create save question but the question is null", nil)
+	} else {
+		if err := json.Unmarshal([]byte(data), &q); err != nil {
+			log.AddError(err, data)
+			OutPut(w, 202, err.Error(), nil)
+			return
+		} else {
+			if !ump.EbMap[q.Exam_Bank_Id].I || !ump.QMap[q.Id].C {
+				log.AddWarning("Create save question but the id or exam_bank_id isn't correct", q)
+				OutPut(w, 203, "Create save question but the id or exam_bank_id isn't correct", nil)
+				return
+			}
+		}
+	}
+	if fv, err := JS2M(q, q); err != nil {
+		log.AddError(err, q)
+		OutPut(w, 204, err.Error(), nil)
+	} else {
+		db := gmdb.GetDb()
+		do := gmdb.DbOpera{ Table:gmdb.D_5, FV:fv }
+		if _, err = db.Insert(do); err != nil {
+			log.AddError(err, do, q)
+			OutPut(w, 205, err.Error(), nil)
+		} else {
+			ump.QMap[q.Id] = CI{ I:true }
+			log.AddLog("Create save question succeed", q)
+			OutPut(w, 200, "Create save question succeed", nil)
+		}
+	}
+}
+func USqHandle(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	q := Question{}
+	if data := r.FormValue("data"); data == "" {
+		log.AddWarning("Update save question but the question is null")
+		OutPut(w, 201, "Update save question but the question is null", nil)
+	} else {
+		if err := json.Unmarshal([]byte(data), &q); err != nil {
+			log.AddError(err, data)
+			OutPut(w, 202, err.Error(), nil)
+			return
+		} else {
+			if !ump.EbMap[q.Exam_Bank_Id].I || !ump.QMap[q.Id].I {
+				log.AddWarning("Update save question but the id or exam_bank_id isn't correct", q)
+				OutPut(w, 203, "Update save question but the id or exam_bank_id isn't correct", nil)
+				return
+			}
+		}
+	}
+	fvw := make(map[string]interface{})
+	fvw["id"] = q.Id
+	if fv, err := JS2M(q, q); err != nil {
+		log.AddError(err, q)
+		OutPut(w, 204, err.Error(), nil)
+	} else {
+		db := gmdb.GetDb()
+		do := gmdb.DbOpera{ Table:gmdb.D_5, FV:fv, FVW:fvw }
+		if _, err = db.Update(do); err != nil {
+			log.AddError(err, do, q)
+			OutPut(w, 205, err.Error(), nil)
+		} else {
+			log.AddLog("Update save question succeed", q)
+			OutPut(w, 200, "Update save question succeed", nil)
+		}
+	}
+}
+func DqHandle(w http.ResponseWriter, r *http.Request) {
+	q := Question{}
+	if data, err := UnmarshalJ(r, &q); err != nil {
+		log.AddError(err, string(data))
+		OutPut(w, 201, err.Error(), nil)
+	} else {
+		if !ump.QMap[q.Id].I {
+			log.AddWarning("Delete question but the id or exam_bank_id isn't correct", q)
+			OutPut(w, 202, "Delete question but the id or exam_bank_id isn't correct", nil)
+			return
+		}
+	}
+	fvw := make(map[string]interface{})
+	fvw["id"] = q.Id
+	db := gmdb.GetDb()
+	do := gmdb.DbOpera{ Table:gmdb.D_5, FVW:fvw }
+	if res, err := db.Delete(do, false); err != nil {
+		log.AddError(err, res, q)
+		OutPut(w, 203, err.Error(), nil)
+	} else {
+		delete(ump.QMap, q.Id)
+		items, err := res.RowsAffected()
+		log.AddLog("Delete question succeed", q, items)
+		if err != nil {
+			log.AddError("Delete question succeed but affected items error", err, q, res)
+		}
+		OutPut(w, 200, "Delete question succeed", items)
+	}
+}
+func ListQuestion(w http.ResponseWriter, r *http.Request) {
+	var q Question
+	if data, err := UnmarshalJ(r, &q); err != nil {
+		log.AddError(err, string(data))
+		OutPut(w, 201, err.Error(), nil)
+	} else {
+		if !ump.EbMap[q.Exam_Bank_Id].I {
+			log.AddWarning("List question but the exam_bank_id isn't correct", data)
+			OutPut(w, 202, "List question but the exam_bank_id isn't correct", nil)
+			return
+		}
+	}
+	db := gmdb.GetDb()
+	fvw := make(map[string]interface{})
+	fvw["exam_bank_id"] = q.Exam_Bank_Id
+	do := gmdb.DbOpera{
+		Table:gmdb.D_5,
+		Name:[]string{"id", "name", "type", "base_type", "spec", "ver", "exam_bank_id", "stem", "choice_1", "choice_2", "choice_3", "choice_4", "choice_5", "choice_6", "choice_7", "choice_8", "choice_answer", "analyze", "tips", "remark", "status" },
+		FVW:fvw,
+	}
+	var qm []Question
+	if rows, err := db.Query(do); err != nil {
+		log.AddError(err, do, q)
+		OutPut(w, 203, err.Error(), nil)
+	} else {
+		for rows.Next() {
+			qt := Question{}
+			if err = rows.Scan(&qt.Id,&qt.Name,&qt.Type,&qt.Base_Type,&qt.Spec,&qt.Ver,&qt.Exam_Bank_Id,&qt.Stem,&qt.Choice_1,&qt.Choice_2,&qt.Choice_3,&qt.Choice_4,&qt.Choice_5,&qt.Choice_6,&qt.Choice_7,&qt.Choice_8,&qt.Choice_Answer,&qt.Analyze,&qt.Tips,&qt.Remark,&qt.Status); err != nil {
+				log.AddError(err, rows, q)
+				OutPut(w, 204, err.Error(), nil)
+			}
+			qm = append(qm, qt)
+		}
+		log.AddLog("List question succeed", q, qm)
+		OutPut(w, 200, "List question succeed", qm)
+	}
+}

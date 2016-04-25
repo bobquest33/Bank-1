@@ -39,7 +39,7 @@ type Paper_Grp struct {
 type Paper struct {
 	Id					string               `json:"Id"`//试卷编码
 	Name				string            `json:"Name"`//试卷名称
-	Paper_Grp_Id		string               //隶属卷组编码
+	Paper_Grp_Id		string            `json:"Paper_Grp_Id"`  //隶属卷组编码
 	Type				string            `json:"Type"`//试卷类型
 	Ver					string            `json:"Ver"`//试卷版本
 	Create_Time			string            `json:"Create_Time"`//创建时间
@@ -52,7 +52,7 @@ type Paper struct {
 type PaperI struct {
 	Id					string               `json:"Id"`//试卷编码
 	Name				string            `json:"Name"`//试卷名称
-	Paper_Grp_Id		string               //隶属卷组编码
+	Paper_Grp_Id		string            `json:"Paper_Grp_Id"`  		//隶属卷组编码
 	Type				string            `json:"Type"`//试卷类型
 	Ver					string            `json:"Ver"`//试卷版本
 	Author				int               `json:"Author"`//作者
@@ -65,9 +65,7 @@ type Question_Grp struct {
 	Id					string               `json:"Id"`//题组编码
 	Type				string            `json:"Type"`//题组题型
 	Name				string            `json:"Name"`//题组名称
-	Old_Name			string            `json:"Old_Name"`
 	Paper_Id			string               `json:"Paper_Id"`//隶属的试卷
-	Paper_Name			string            `json:"Paper_Name"`//隶属的试卷名字
 	Desc				string            `json:"Desc"`//题组说明
 	Score				float32           `json:"Score"`//题目分数
 	Position			int               `json:"Position"`//题组在试卷中的位置
@@ -77,12 +75,8 @@ type Question_Grp struct {
 
 type Paper_Question struct {
 	Id					string             `json:"Id"`//试卷中试题编码
-	Name				string          `json:"Name"`//试卷中的试题编码
-	Old_Name			string          `json:"Old_Name"`
 	Question_Id			string             `json:"Question_Id"`//引用试题编码
-	Question_Name		string          `json:"Question_Name"`//引用试题名字
 	Question_Grp_Id		string             `json:"Question_Grp_Id"`//卷组编码
-	Question_Grp_Name	string          `json:"Question_Grp_Name"`//卷组名字
 	Score				float32         `json:"Score"`//分数
 	Position			int             `json:"Position"`//试卷中/卷组中的位置
 	Required			bool           	`json:"Required"`//必做：0，选做：1
@@ -93,13 +87,11 @@ type Paper_Question struct {
 type Question struct {
 	Id					string               `json:"Id"`			//题目编码
 	Name				string            `json:"Name"` 	 	//题目名称
-	Old_Name			string            `json:"Old_Name"`
 	Type				string            `json:"Type"`			//用户自定义类型.如情景题，阅读理解题
 	Base_Type			string            `json:"Base_Type"`	//题目类型：单选，多选，判断，填空，问答
 	Spec				string            `json:"Spec"`			//题目规则
 	Ver					string            `json:"Ver"`			//版本
 	Exam_Bank_Id		string										//隶属题库编码
-	Exam_Bank_Name		string            `json:"Exam_Bank_Name"`	//隶属题库名字
 	Stem				string            `json:"Stem"`			//题干
 	Choice_1			string            `json:"Choice_1"`		//选项1
 	Choice_2			string            `json:"Choice_2"`		//选项2
