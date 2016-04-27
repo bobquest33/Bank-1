@@ -4,7 +4,6 @@ import (
 	"math"
 	"util/gmdb"
 	"util/log"
-	"fmt"
 )
 
 func Analyze(dig int) []int {
@@ -122,15 +121,18 @@ func DupP(tx gmdb.Transaction, idPg string) ([]string, error) {
 			}
 			ids = append(ids, p.Id)
 			p.Paper_Grp_Id = idPg
-			temp := make([]interface{}, 0)
+			var temp []interface{}
 			temp = append(temp, p.Name,p.Paper_Grp_Id,p.Type,p.Ver,p.Create_Time,p.Author,p.Composed_Time,p.Remark,p.Status, p.Id)
 			values = append(values, temp)
 			count ++
 		}
 	}
+	if len(values) == 0 {
+		log.AddWarning("DupP but values is empty")
+		return []string{}, nil
+	}
 	do.Name = append(do.Name, "id")
 	dbom := gmdb.DbOM{ Table:gmdb.D_3, Name:do.Name, Value:values }
-	fmt.Printf("%v\n", dbom)
 	if _, err := tx.InsertMulti(dbom); err != nil {
 		log.AddError(err, dbom, values)
 		return ids, err
@@ -143,10 +145,8 @@ func UpdP(tx gmdb.Transaction, fv map[string]interface{}, fvw []map[string]inter
 		Table:gmdb.D_3,
 		FV:fv,
 	}
-	fmt.Println(fvw)
 	for _, v := range fvw {
 		do.FVW = v
-		fmt.Println(v)
 		if _, err := tx.Update(do); err != nil {
 			return err
 		}
@@ -156,11 +156,10 @@ func UpdP(tx gmdb.Transaction, fv map[string]interface{}, fvw []map[string]inter
 
 func DupQg(tx gmdb.Transaction, idPs []string) ([]string, error) {
 	idQgs := []string{}
+	var values [][]interface{}
 	for _, idP := range idPs {
 		fvw := make(map[string]interface{})
 		fvw["Paper_Id"] = idP
-		var values [][]interface{}
-		var count int
 		do := gmdb.DbOpera{Table:gmdb.D_4, Name:[]string{"type","name","paper_id","desc","score","position","remark","status"}, FVW:fvw}
 		if rows, err := tx.Query(do); err != nil {
 			log.AddError(err, do)
@@ -179,9 +178,14 @@ func DupQg(tx gmdb.Transaction, idPs []string) ([]string, error) {
 				}
 				idQgs = append(idQgs, qg.Id)
 				qg.Paper_Id = idP
-				values[count] = append(values[count], qg.Type,qg.Name,qg.Paper_Id,qg.Desc,qg.Score,qg.Position,qg.Remark,qg.Status, qg.Id)
-				count ++
+				var temp []interface{}
+				temp = append(temp, qg.Type,qg.Name,qg.Paper_Id,qg.Desc,qg.Score,qg.Position,qg.Remark,qg.Status, qg.Id)
+				values = append(values, temp)
 			}
+		}
+		if len(values) == 0{
+			log.AddWarning("DupQg but values is empty")
+			return []string{}, nil
 		}
 		do.Name = append(do.Name, "id")
 		dbom := gmdb.DbOM{ Table:gmdb.D_4, Name:do.Name, Value:values }
@@ -208,6 +212,63 @@ func UpdQg(tx gmdb.Transaction, fv map[string]interface{}, fvw []map[string]inte
 	return nil
 }
 
+func DupPq(tx gmdb.Transaction, idQgs []string, ifAudit []int) ([]string, error) {
+	idPq := []string{}
+	var values [][]interface{}
+	for _, idQg := range idQgs {
+		fvw := make(map[string]interface{})
+		fvw["Question_Grp_Id"] = idQg
+		do := gmdb.DbOpera{ Table:gmdb.D_6, Name:[]string{"Question_Id","Question_Grp_Id","Score","Position","Required","Remark","Status"}, FVW:fvw }
+		if rows, err := tx.Query(do); err != nil {
+			log.AddError(err, do)
+			return idPq, err
+		} else {
+			db := gmdb.GetDb()
+			for rows.Next() {
+				var pq Paper_Question
+				if err = rows.Scan(&pq.Question_Id,&pq.Question_Grp_Id,&pq.Score,&pq.Position,&pq.Required,&pq.Remark,&pq.Status); err != nil {
+					log.AddError(err, rows, values)
+					return idPq, err
+				}
+				if pq.Id, err = UGuid(db, gmdb.D_6); err != nil {
+					log.AddError(err)
+					return idPq, err
+				}
+				idPq = append(idPq, pq.Id)
+				pq.Question_Grp_Id = idQg
+				var temp []interface{}
+				temp = append(temp, pq.Question_Id,pq.Question_Grp_Id,pq.Score,pq.Position,pq.Required,pq.Remark,pq.Status, pq.Id)
+				values = append(values, temp)
+			}
+		}
+		if len(values) == 0 {
+			log.AddWarning("DupPq but values is empty")
+			return []string{}, nil
+		}
+		do.Name = append(do.Name, "id")
+		dbom := gmdb.DbOM{ Table:gmdb.D_6, Name:do.Name, Value:values }
+		if _, err := tx.InsertMulti(dbom); err != nil {
+			log.AddError(err, dbom)
+			return idPq, err
+		}
+	}
+	return idPq, nil
+}
+
+func UpdPq(tx gmdb.Transaction, fv map[string]interface{}, fvw []map[string]interface{}) (error) {
+	do := gmdb.DbOpera{
+		Table:gmdb.D_6,
+		FV:fv,
+	}
+	for _, v := range fvw {
+		do.FVW = v
+		if _, err := tx.Update(do); err != nil {
+			log.AddError(err, do)
+			return err
+		}
+	}
+	return nil
+}
 //func DupQ(tx gmdb.Transaction, idQgs []string) ([]string, error) {
 //	idQs := []string{}
 //	for _, idQg := range idQgs {

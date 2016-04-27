@@ -139,7 +139,7 @@ type Exam struct {
 	Exam_Create_Time	string                `json:"Exam_Create_Time"`//考试创建时间
 	Exam_Author			int                   `json:"Exam_Author"`//考试创建者
 	Exam_Target			string                `json:"Exam_Target"`//考试对象
-	Time_Timit			int                   `json:"Time_Timit"`//考试限时
+	Time_Limit			int                   `json:"Time_Limit"`//考试限时
 	Creator				int                   `json:"Creator"`//创建者
 	Remark				string                `json:"Remark"`//备注
 	Status				string                `json:"Status"`//状态
@@ -152,7 +152,7 @@ type ExamI struct {
 	Exam_Create_Time	string                `json:"Exam_Create_Time"`//考试创建时间
 	Exam_Author			int                   `json:"Exam_Author"`//考试创建者
 	Exam_Target			string                `json:"Exam_Target"`//考试对象
-	Time_Timit			int                   `json:"Time_Timit"`//考试限时
+	Time_Limit			int                   `json:"Time_Limit"`//考试限时
 	Creator				int                   `json:"Creator"`//创建者
 	Remark				string                `json:"Remark"`//备注
 	Status				string                `json:"Status"`//状态

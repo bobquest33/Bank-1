@@ -55,10 +55,19 @@ func NetConn(url string, v url.Values) (string, error) {
 }
 
 func TestRelease(t *testing.T) {
-	exam := logic.Exam{ Id:"852327da0c6111e6846a94911dddfd5c", Paper_Grp_Id:"df4c6b88a1c71b5b506b4be734eb75f1" }
-	//if _, err := NewRequest("/releaseExam", "get", exam); err != nil {
-	//	t.Error(err)
-	//}
+	var res logic.Result
+	var idE string
+	if str, err := NewRequest("/createExam", "get", logic.Exam{Paper_Grp_Id:"df4c6b88a1c71b5b506b4be734eb75f1"}); err != nil {
+		t.Error(err)
+	} else {
+		if err := json.Unmarshal([]byte(str), &res); err != nil {
+			t.Error(err)
+		} else {
+			idE = res.Data.(string)
+			fmt.Println("idE is ", idE)
+		}
+	}
+	exam := logic.Exam{ Id:idE, Paper_Grp_Id:"df4c6b88a1c71b5b506b4be734eb75f1" }
 	if data, err := json.Marshal(exam); err != nil {
 		t.Error(err)
 	} else {

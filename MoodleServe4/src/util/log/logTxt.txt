@@ -2240,3 +2240,137 @@
 [Log] : 2016/04/27 19:38:31 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
 [Log] : 2016/04/27 19:38:31 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
 [Log] : 2016/04/27 19:38:31 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/logic/exam.go:57: Release exam succeed%!(EXTRA logic.Exam={Id:852327da0c6111e6846a94911dddfd5c Exam_Name: Paper_Grp_Id:df4c6b88a1c71b5b506b4be734eb75f1 Audit_Type:0 Exam_Create_Time: Exam_Author:0 Exam_Target: Time_Timit:0 Creator:0 Remark: Status:})
+[Log] : 2016/04/27 21:42:42 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 21:42:42 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:42:54 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:42:54 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:42:54 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:42:54 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:43:46 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 21:43:46 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:43:49 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:43:49 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:43:49 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:43:49 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:44:29 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 21:44:29 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:44:32 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:44:32 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:44:32 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:44:32 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:47:34 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 21:47:34 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:47:36 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:47:36 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:47:36 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:47:36 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:48:23 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 21:48:23 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:48:25 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:48:25 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:48:25 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:48:25 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:50:43 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 21:50:43 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:50:46 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:50:46 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:50:46 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:50:46 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:51:06 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 21:51:06 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:51:09 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:51:09 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:51:09 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:51:09 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:51:45 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 21:51:45 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:51:47 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:51:47 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:51:47 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:51:47 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:52:26 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 21:52:26 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:52:28 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:52:28 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:52:28 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:52:28 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:54:48 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 21:54:48 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:54:50 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:54:50 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:54:50 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:54:50 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:55:11 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 21:55:11 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:55:13 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:55:13 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:55:13 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:55:13 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:55:53 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 21:55:53 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:55:55 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:55:55 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:55:55 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:55:55 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:56:11 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 21:56:11 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:56:13 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:56:13 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:56:13 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:56:13 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:56:35 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 21:56:35 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:56:37 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:56:37 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:56:37 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 21:56:37 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:02:59 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 22:02:59 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:03:03 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:03:03 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:03:03 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:03:03 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:03:03 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/logic/exam.go:56: Release exam succeed%!(EXTRA logic.Exam={Id:852327da0c6111e6846a94911dddfd5c Exam_Name: Paper_Grp_Id:df4c6b88a1c71b5b506b4be734eb75f1 Audit_Type:0 Exam_Create_Time: Exam_Author:0 Exam_Target: Time_Timit:0 Creator:0 Remark: Status:})
+[Log] : 2016/04/27 22:36:46 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 22:36:46 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:36:56 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:36:56 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:36:56 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:36:56 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:36:56 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/logic/exam.go:55: Release exam succeed%!(EXTRA logic.Exam={Id:852327da0c6111e6846a94911dddfd5c Exam_Name: Paper_Grp_Id:df4c6b88a1c71b5b506b4be734eb75f1 Audit_Type:0 Exam_Create_Time: Exam_Author:0 Exam_Target: Time_Timit:0 Creator:0 Remark: Status:})
+[Log] : 2016/04/27 22:49:07 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 22:49:07 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:53:33 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 22:53:33 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:54:48 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:54:48 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/logic/exam.go:29: Exam create id succeed%!(EXTRA string=f93e3ede54f56f95e62ff401c59e107f)
+[Log] : 2016/04/27 22:54:48 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:56:42 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 22:56:42 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:56:51 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:56:51 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/logic/exam.go:29: Exam create id succeed%!(EXTRA string=5bf91c643a79e3892416f49c936c909e)
+[Log] : 2016/04/27 22:56:51 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:57:19 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 22:57:19 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:57:22 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 22:57:22 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/logic/exam.go:29: Exam create id succeed%!(EXTRA string=97ba00286bf0c2235a0f928bb6ed8cf2)
+[Log] : 2016/04/27 22:57:22 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 23:00:01 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 23:00:01 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 23:00:24 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 23:00:24 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/logic/exam.go:29: Exam create id succeed%!(EXTRA string=4c5261ee3d7a5da59169ecb549476498)
+[Log] : 2016/04/27 23:00:24 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 23:03:05 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 23:03:05 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 23:03:07 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 23:03:07 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/logic/exam.go:29: Exam create id succeed%!(EXTRA string=08eca67cd1898f4ec988d9e612d1a2f3)
+[Log] : 2016/04/27 23:03:07 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 23:05:27 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 23:05:27 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 23:05:33 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 23:05:33 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/logic/exam.go:29: Exam create id succeed%!(EXTRA string=149ccec835e089d329f4300573b29264)
+[Log] : 2016/04/27 23:05:33 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 23:05:33 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 23:05:33 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 23:05:33 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 23:05:33 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/logic/exam.go:57: Release exam succeed%!(EXTRA logic.Exam={Id:149ccec835e089d329f4300573b29264 Exam_Name: Paper_Grp_Id:df4c6b88a1c71b5b506b4be734eb75f1 Audit_Type:0 Exam_Create_Time: Exam_Author:0 Exam_Target: Time_Limit:0 Creator:0 Remark: Status:})

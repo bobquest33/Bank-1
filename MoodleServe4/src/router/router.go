@@ -43,6 +43,7 @@ func Init() {
 	http.HandleFunc("/deleteQuestion",		logic.DqHandle)
 	http.HandleFunc("/listQuestion",		logic.ListQuestion)
 
+	http.HandleFunc("/createExam",			logic.CeHandle)
 	http.HandleFunc("/releaseExam", 		logic.AddeHandle)
 
 	http.HandleFunc("/bank",				logic.C)

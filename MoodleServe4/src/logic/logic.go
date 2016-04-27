@@ -835,7 +835,6 @@ func CSpqHandle(w http.ResponseWriter, r *http.Request) {
 			OutPut(w, 200, "Create save paper_question succeed", nil)
 		}
 	}
-
 }
 func USpqHandle(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
