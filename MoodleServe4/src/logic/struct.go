@@ -134,9 +134,20 @@ type Question struct {
 type Exam struct {
 	Id					string                   `json:"Id"`//考试编码
 	Exam_Name			string                `json:"Exam_Name"`//考试名称
-	Old_Name			string                `json:"Old_Name"`
 	Paper_Grp_Id		string                   `json:"Paper_Grp_Id"`//使用的卷组编码
-	Paper_Grp_Name		string                `json:"Paper_Grp_Name"`
+	Audit_Type			int                   `json:"Audit_Type"`//审核类型
+	Exam_Create_Time	string                `json:"Exam_Create_Time"`//考试创建时间
+	Exam_Author			int                   `json:"Exam_Author"`//考试创建者
+	Exam_Target			string                `json:"Exam_Target"`//考试对象
+	Time_Timit			int                   `json:"Time_Timit"`//考试限时
+	Creator				int                   `json:"Creator"`//创建者
+	Remark				string                `json:"Remark"`//备注
+	Status				string                `json:"Status"`//状态
+}
+
+type ExamI struct {
+	Exam_Name			string                `json:"Exam_Name"`//考试名称
+	Paper_Grp_Id		string                   `json:"Paper_Grp_Id"`//使用的卷组编码
 	Audit_Type			int                   `json:"Audit_Type"`//审核类型
 	Exam_Create_Time	string                `json:"Exam_Create_Time"`//考试创建时间
 	Exam_Author			int                   `json:"Exam_Author"`//考试创建者

@@ -52,6 +52,21 @@ func Struct2Map(v interface{}) (map[string]interface{}, error) {
 	return res, nil
 }
 
+//struct to map with field's slice and value's slice
+func Struct2KM(v interface{}) ([]string,[]interface{}, error) {
+	var keys []string
+	var values []interface{}
+	if data, err := Struct2Map(v); err != nil {
+		return nil, nil, err
+	} else {
+		for k, v := range data {
+			keys = append(keys, k)
+			values = append(values, v)
+		}
+	}
+	return keys, values, nil
+}
+
 func Map2Struct(data map[string]interface{}, v interface{}) (error) {
 	dt, err := json.Marshal(data)
 	if err != nil {
@@ -107,6 +122,17 @@ func MskIv2S(v map[string]interface{}) []string {
 		names = append(names, k)
 	}
 	return names
+}
+
+//map key string value interface to key slice and value slice
+func MapSI2S(v map[string]interface{}) ([]string, []interface{}) {
+	var keys []string
+	var values []interface{}
+	for k, v := range v {
+		keys = append(keys, k)
+		values = append(values, v)
+	}
+	return keys, values
 }
 
 func Guid() (string, error) {

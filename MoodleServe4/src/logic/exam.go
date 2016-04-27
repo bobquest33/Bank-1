@@ -5,6 +5,7 @@ import (
 	"util/gmdb"
 	"util/log"
 	"encoding/json"
+	"fmt"
 )
 
 func CeHandle(w http.ResponseWriter, r *http.Request) {
@@ -41,41 +42,40 @@ func AddeHandle(w http.ResponseWriter, r *http.Request) {
 			OutPut(w, 202, err.Error(), nil)
 			return
 		} else {
-			if !ump.PgMap[exam.Paper_Grp_Id].I || !ump.EMap[exam.Id].C {
+			if !ump.PgMap[exam.Paper_Grp_Id].I || !ump.EMap[exam.Id].I {
+				fmt.Println(ump.PgMap, ump.EMap)
 				log.AddWarning("Add an exam but the id or paper_grp_id isn't correct", exam)
 				OutPut(w, 203, "Add an exam but the id or paper_grp_id isn't correct", nil)
 				return
 			}
 		}
 	}
-
+	if err := realeseExam(exam); err != nil {
+		log.AddError(err, exam)
+		OutPut(w, 204, err.Error(), nil)
+	} else {
+		log.AddLog("Release exam succeed", exam)
+		OutPut(w, 200, "Release exam succeed", nil)
+	}
 }
 func realeseExam(exam Exam) (error) {
 	auditType := Analyze(exam.Audit_Type)
 	if tx, err := gmdb.GetTx(); err != nil {
+		log.AddError(err, auditType, exam)
 		return err
 	} else {
-		ReleaseE(tx, exam.Paper_Grp_Id, auditType)
+		//ReleaseE()
+		if err = ReleasePaperG(tx, exam.Paper_Grp_Id, auditType); err != nil {
+			log.AddError(err, auditType, exam)
+			return err
+		}
+		tx.Tx.Commit()
 	}
 	return nil
 }
 
-func IfRelease(dig int, audit []int) bool {
-	if len(audit) == 0 {
-		return false
-	}
-	if dig == audit[0] {
-		return true
-	}
-	return false
-}
-
-func ReleaseE(tx gmdb.Transaction, idPg string, ifAudit []int) {
-	if IfRelease(Rel_8, ifAudit) {
-
-	} else {
-
-	}
+func ReleaseE(tx gmdb.Transaction, idE string, idPg int, ifAudit []int) (error) {
+	return nil
 }
 func NoRelease(tx gmdb.Transaction, id int, ifAudit []int) {
 
@@ -83,12 +83,59 @@ func NoRelease(tx gmdb.Transaction, id int, ifAudit []int) {
 func ReleaseQuestion(tx gmdb.Transaction, id int) {
 
 }
-func ReleaseQuestionG(tx gmdb.Transaction, id int) {
-
+func ReleaseQuestionG(tx gmdb.Transaction, ids []string) (error) {
+	return nil
 }
-func ReleasePaper(tx gmdb.Transaction, IdPg int) {
-
+func ReleasePaper(tx gmdb.Transaction, IdPg string, ifAudit []int) (error) {
+	if ids, err := DupP(tx, IdPg); err != nil {
+		log.AddError(err)
+		return err
+	} else {
+		fv := make(map[string]interface{})
+		var fvw []map[string]interface{}
+		if IfRelease(Rel_4, ifAudit) {
+			fv["status"] = "2"
+			ifAudit = ifAudit[1:]
+		} else {
+			fv["status"] = "6"
+		}
+		for _, v := range ids {
+			fvwt := make(map[string]interface{})
+			fvwt["id"] = v
+			fvw = append(fvw, fvwt)
+		}
+		fmt.Println(fvw)
+		if err = UpdP(tx, fv, fvw); err != nil {
+			log.AddError(err, fv, fvw)
+			return err
+		}
+		return ReleaseQuestionG(tx, ids)
+		//return nil
+	}
 }
+
+func ReleasePaperG(tx gmdb.Transaction, idPg string, ifAudit []int) (error) {
+	if id, err := DupPg(tx, idPg); err != nil {
+		log.AddError(err, idPg)
+		return err
+	} else {
+		fv := make(map[string]interface{})
+		fvw := make(map[string]interface{})
+		if IfRelPG(ifAudit) {
+			fv["status"] = "2"
+		} else {
+			fv["status"] = "6"
+		}
+		fvw["id"] = idPg
+		if err = UpdPg(tx, id, fv, fvw); err != nil {
+			log.AddError(err, id, fv, fvw)
+			return err
+		}
+	}
+	return ReleasePaper(tx, idPg, ifAudit)
+	//return nil
+}
+
 func ReleaseExam(tx gmdb.Transaction, idE int) {
 	
 }

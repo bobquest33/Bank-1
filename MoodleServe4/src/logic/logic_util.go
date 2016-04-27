@@ -90,6 +90,10 @@ func mapMapping(ump *UMP) {
 		log.AddError(err)
 		panic (err)
 	}
+	if ump.EMap, err = GID(db, gmdb.D_7); err != nil {
+		log.AddError(err)
+		panic(err)
+	}
 }
 
 //get id mapping to database

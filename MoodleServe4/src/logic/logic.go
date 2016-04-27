@@ -400,14 +400,14 @@ func ListPaperGrp(w http.ResponseWriter, r *http.Request) {
 			log.AddWarning("List papergrp but the exam_bank_id isn't correct", pg)
 			OutPut(w, 203, "List papergrp but the exam_bank_id isn't correct", nil)
 		}
-		fv := make(map[string]interface{})
-		fv["exam_bank_id"] = pg.Exam_Bank_Id
+		fvw := make(map[string]interface{})
+		fvw["exam_bank_id"] = pg.Exam_Bank_Id
 		pgm := []Paper_Grp{}
 		db := gmdb.GetDb()
 		do := gmdb.DbOpera{
 			Table:gmdb.D_2,
 			Name:[]string{"id", "name", "type", "exam_bank_id", "remark", "status"},
-			FV:fv,
+			FVW:fvw,//todo
 		}
 		var rows *sql.Rows
 		if rows, err = db.Query(do); err != nil {

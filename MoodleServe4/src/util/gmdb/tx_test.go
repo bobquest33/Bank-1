@@ -67,5 +67,5 @@ func TestTxo(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	tx.Tx.Commit()
+	//tx.Tx.Commit()
 }

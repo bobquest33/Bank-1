@@ -5,6 +5,7 @@ import (
 	"database/sql"
 	"errors"
 	"strings"
+	"strconv"
 )
 
 type Transaction struct {
@@ -234,23 +235,27 @@ func (tx Transaction) Copy(do []DbOpera) (sql.Result, error) {
 
 // database opera multi, only insert, update isn't allow to update multi
 type DbOM struct {
-	table		string
+	Table		string
 	Name		[]string
-	Value		[][]string
+	Value		[][]interface{}
 }
 func (tx Transaction) InsertMulti(dbom DbOM) (sql.Result, error) {
 	var inf, inv string
 	fields := strings.Join(dbom.Name, "`,`")
 	inf = fmt.Sprintf("%s%s%s", "`", fields, "`")
-	length := len(dbom.Value)
-	for ti, tv := range dbom.Value {
-		inv = strings.Join(tv, "`,`")
-		inv = fmt.Sprintf("%s%s%s", "`", inv, "`")
+	vls, err := I2S(dbom.Value)
+	if err != nil {
+		return nil, err
+	}
+	length := len(vls)
+	for ti, tv := range vls {
+		inv = strings.Join(tv, "','")
+		inv = fmt.Sprintf("%s%s%s", "'", inv, "'")
 		if ti != (length - 1) {
 			inv += "),("
 		}
 	}
-	cmd := fmt.Sprintf("insert into %s ( %s ) values ( %s )", dbom.table, inf, inv)
+	cmd := fmt.Sprintf("insert into %s ( %s ) values ( %s )", dbom.Table, inf, inv)
 	fmt.Println(cmd)
 	if stmt, err := tx.Tx.Prepare(cmd); err != nil {
 		return nil, err
@@ -261,4 +266,37 @@ func (tx Transaction) InsertMulti(dbom DbOM) (sql.Result, error) {
 			return res, nil
 		}
 	}
+}
+
+func I2S(v [][]interface{}) ([][]string, error) {
+	res := [][]string{}
+	for _, v := range v {
+		rt := []string{}
+		for _, vv := range v {
+			switch vv.(type) {
+			case string:
+				rt = append(rt, vv.(string))
+			case int:
+				tyv := strconv.Itoa(vv.(int))
+				rt = append(rt, tyv)
+				break
+			case float32:
+				tyv := strconv.FormatFloat(float64(vv.(float32)), 'e', -1, 32)
+				rt = append(rt, tyv)
+				break
+			case float64:
+				tyv := strconv.FormatFloat(vv.(float64), 'e', -1, 32)
+				rt = append(rt, tyv)
+				break
+			case bool:
+				tyv := strconv.FormatBool(vv.(bool))
+				rt = append(rt, tyv)
+				break
+			default:
+				return nil, errors.New("Unknow type of the value")
+			}
+		}
+		res = append(res, rt)
+	}
+	return res, nil
 }
