@@ -2071,3 +2071,9 @@
 [Log] : 2016/04/25 14:46:28 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/logic/logic.go:879: Delete paper_question succeed%!(EXTRA int64=1, logic.Paper_Question={Id:3e76983effb2b3f5802fe1bce8db45a6 Question_Id: Question_Grp_Id: Score:0 Position:0 Required:false Remark: Status:})
 [Log] : 2016/04/25 14:46:28 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
 [Log] : 2016/04/25 14:46:28 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/logic/logic.go:919: List paper_question succeed%!(EXTRA logic.Paper_Question={Id: Question_Id: Question_Grp_Id:352d98c947128f842277e65fc0940891 Score:0 Position:0 Required:false Remark: Status:}, []logic.Paper_Question=[{Id:16fa1e3da7fb3b326b68ab92a2d4a6d2 Question_Id:5ee2721ea8c3f381eeec203555a8799b Question_Grp_Id:352d98c947128f842277e65fc0940891 Score:99 Position:1 Required:false Remark:none Status:draft} {Id:34d0ec653262ffd4bb2bb8be8cb73d27 Question_Id:5ee2721ea8c3f381eeec203555a8799b Question_Grp_Id:352d98c947128f842277e65fc0940891 Score:96 Position:2 Required:false Remark:null Status:draft} {Id:493fb0ddf7bde9553ea77ce28946e9b1 Question_Id:5ee2721ea8c3f381eeec203555a8799b Question_Grp_Id:352d98c947128f842277e65fc0940891 Score:96 Position:2 Required:false Remark:null Status:draft}])
+[Log] : 2016/04/26 16:46:42 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/26 16:46:42 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 10:14:01 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 10:14:01 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!
+[Log] : 2016/04/27 10:14:13 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:36: Connect database succeed.
+[Log] : 2016/04/27 10:14:13 /Users/tangs/IdeaProjects/Bank/MoodleServe4/src/util/gmdb/db.go:86: GetDb succeed!

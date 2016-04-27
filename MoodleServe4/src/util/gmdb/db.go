@@ -27,7 +27,7 @@ type Rows struct {
 var db DbController
 
 func Init() {
-	_, err := DbConnect()
+	_, err := DbConnect(	)
 	if err != nil {
 		panic(err)
 		log.AddError("Connect database but failed.", err)

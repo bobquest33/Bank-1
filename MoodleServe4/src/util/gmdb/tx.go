@@ -11,6 +11,11 @@ type Transaction struct {
 	Tx		*sql.Tx
 }
 
+func GetTx() (Transaction, error) {
+	trans, err := GetDb().Mdb.Begin()
+	return Transaction{ Tx:trans }, err
+}
+
 func (tx Transaction) Insert (d DbOpera) (sql.Result, error) {
 	if d.Table == "" {
 		return nil, errors.New("table is invalid or it is null")
@@ -32,7 +37,6 @@ func (tx Transaction) Insert (d DbOpera) (sql.Result, error) {
 		}
 		count++
 	}
-
 	cmd := fmt.Sprintf("Insert into %s ( %s ) value ( %s )", d.Table, sels, vals)
 	//fmt.Println(cmd)
 	stmt, err := tx.Tx.Prepare(cmd)
@@ -132,10 +136,6 @@ func (tx Transaction) Update (d DbOpera) (sql.Result, error) {
 	return res, nil
 }
 
-func (tx Transaction) InsertMulti() {
-	//InsertMulti
-}
-
 func (tx Transaction) Query(do DbOpera) (*sql.Rows, error) {
 	if do.Table == "" {
 		return nil, errors.New("table is invalid or it is null")
@@ -178,4 +178,87 @@ func (tx Transaction) QueryRow(do DbOpera) *sql.Row {
 	//rows, err := tx.Query(do)
 	//return &sql.Row{rows: rows, err: err}
 	return &sql.Row{}
+}
+func (tx Transaction) CopyRow(do DbOpera) (sql.Result, error) {
+	if len(do.Name) < 1 {
+		return nil, errors.New("invalid field to insert")
+	}
+	inf := strings.Join(do.Name, "`,`")
+	inf = fmt.Sprintf("%s%s%s", "`", inf, "`")
+	var sf string
+	if len(do.SF) < 1 {
+		sf = " * "
+	} else {
+		sf := strings.Join(do.SF, "`,`")
+		sf = fmt.Sprintf("%s%s%s", "`", sf, "`")
+	}
+	var wherecols string
+	var length int = len(do.FVW)
+	var count int = 0
+	msw, err := MapI2MapS(do.FVW)
+	if err != nil {
+		return nil, err
+	} else {
+		for k, v := range msw {
+			wherecols += fmt.Sprintf("%s%s%s=%s%s%s", "`", k, "`", "`", v, "``")
+			if count != (length - 1) {
+				wherecols += " and "
+			}
+			count ++
+		}
+	}
+	cmd := fmt.Sprintf("insert into %s ( %s ) select %s from %s where %s", do.Table, inf, sf, do.FTable, wherecols)
+	fmt.Println(cmd)
+	if stmt, err := tx.Tx.Prepare(cmd); err != nil {
+		return nil, err
+	} else {
+		if res, err := stmt.Exec(); err != nil {
+			return nil, err
+		} else {
+			return res, nil
+		}
+	}
+	return nil, err
+}
+
+func (tx Transaction) Copy(do []DbOpera) (sql.Result, error) {
+	var res sql.Result
+	var err error
+	for _, v := range do {
+		if res, err = tx.CopyRow(v); err != nil {
+			return res, err
+		}
+	}
+	return res, err
+}
+
+// database opera multi, only insert, update isn't allow to update multi
+type DbOM struct {
+	table		string
+	Name		[]string
+	Value		[][]string
+}
+func (tx Transaction) InsertMulti(dbom DbOM) (sql.Result, error) {
+	var inf, inv string
+	fields := strings.Join(dbom.Name, "`,`")
+	inf = fmt.Sprintf("%s%s%s", "`", fields, "`")
+	length := len(dbom.Value)
+	for ti, tv := range dbom.Value {
+		inv = strings.Join(tv, "`,`")
+		inv = fmt.Sprintf("%s%s%s", "`", inv, "`")
+		if ti != (length - 1) {
+			inv += "),("
+		}
+	}
+	cmd := fmt.Sprintf("insert into %s ( %s ) values ( %s )", dbom.table, inf, inv)
+	fmt.Println(cmd)
+	if stmt, err := tx.Tx.Prepare(cmd); err != nil {
+		return nil, err
+	} else {
+		if res, err := stmt.Exec(); err != nil {
+			return res, err
+		} else {
+			return res, nil
+		}
+	}
 }

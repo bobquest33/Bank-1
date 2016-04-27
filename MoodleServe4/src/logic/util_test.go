@@ -6,7 +6,7 @@ import (
 )
 
 func TestUtil(t *testing.T) {
-	eb := Exam_Bank{Name:"tangs", Old_Name:"lily", Type:"private", Class:"math", Remark:"nothing", Status:"draft"}
+	eb := Exam_Bank{Name:"tangs", Type:"private", Class:"math", Remark:"nothing", Status:"draft"}
 	ebi := EBI{}
 	err := JS2S(eb, &ebi)
 	if err != nil {

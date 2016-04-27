@@ -1,5 +1,13 @@
 package logic
 
+const (
+	Rel_1	=	1
+	Rel_2	=	2
+	Rel_4	=	4
+	Rel_8	=	8
+	Rel_16	=	16
+)
+
 //todo ID json should be comment
 type Exam_Bank struct {
 	Id					string          `json:"Id"`				//题库编码

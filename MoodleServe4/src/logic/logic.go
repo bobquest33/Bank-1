@@ -30,6 +30,10 @@ type UMP struct {
 	QgMap		map[string]CI
 	QMap		map[string]CI
 	PqMap		map[string]CI
+	EMap 		map[string]CI
+	IMap		map[string]CI
+	ApMap		map[string]CI
+	AqMap		map[string]CI
 }
 
 var ump UMP
@@ -42,6 +46,10 @@ func Init() {
 		QgMap:make(map[string]CI),
 		QMap :make(map[string]CI),
 		PqMap:make(map[string]CI),
+		EMap :make(map[string]CI),
+		IMap :make(map[string]CI),
+		ApMap:make(map[string]CI),
+		AqMap:make(map[string]CI),
 	}
 	mapMapping(&ump)
 }
@@ -433,7 +441,8 @@ func CpHandle(w http.ResponseWriter, r *http.Request) {
 		log.AddWarning("Create paper but the paper_grp_id isn't correct", p)
 		OutPut(w, 202, "Create paper but the paper_grp_id isn't correct", nil)
 	} else {
-		if uuid, err := Guid(); err == nil {
+		db := gmdb.GetDb()
+		if uuid, err := UGuid(db, gmdb.D_3); err == nil {
 			ump.PMap[uuid] = CI{ C:true, I:false }
 			log.AddLog("Paper create id succeed", uuid)
 			OutPut(w, 200, "Paper create id succeed", uuid)
@@ -452,6 +461,7 @@ func CSpHandle(w http.ResponseWriter, r *http.Request) {
 	if data == "" {
 		log.AddWarning("Create save paper but the paper is null")
 		OutPut(w, 201, "Create save paper but the paper is null", nil)
+		return
 	} else {
 		if err := json.Unmarshal([]byte(data), &p); err != nil {
 			log.AddError(err, data)
@@ -497,7 +507,6 @@ func USpHandle(w http.ResponseWriter, r *http.Request) {
 	if !ump.PMap[p.Id].I || !ump.PgMap[p.Paper_Grp_Id].I {
 		log.AddWarning("Update save paper but the id or paper_grp_id isn't correct", p)
 		OutPut(w, 202, "Update save paper but the id or paper_grp_id isn't correct", nil)
-		fmt.Println(ump.PMap,  ump.PgMap)
 	} else {
 		if fv, err := JS2M(p, p); err == nil {
 			db := gmdb.GetDb()
@@ -615,7 +624,8 @@ func CqgHandle(w http.ResponseWriter, r *http.Request) {
 		log.AddWarning("Create question_grp but the paper_id isn't correct", qg)
 		OutPut(w, 202, "Create question_grp but the paper_id isn't correct", nil)
 	} else {
-		if uuid, err := Guid(); err == nil {
+		db := gmdb.GetDb()
+		if uuid, err := UGuid(db, gmdb.D_4); err == nil {
 			ump.QgMap[uuid] = CI{ C:true }
 			log.AddLog("Question_Grp create id succeed", uuid)
 			OutPut(w, 200, "Question_Grp create id succeed", uuid)
@@ -632,6 +642,7 @@ func CSqgHandle(w http.ResponseWriter, r *http.Request) {
 	if data = r.FormValue("data"); data == "" {
 		log.AddWarning("Create save question_grp but the question_grp is null")
 		OutPut(w, 201, "Create save question_grp but the question_grp is null", nil)
+		return
 	} else {
 		if err := json.Unmarshal([]byte(data), &qg); err != nil {
 			log.AddError(err, data)
@@ -666,6 +677,7 @@ func USqgHandle(w http.ResponseWriter, r *http.Request) {
 	if data := r.FormValue("data"); data == "" {
 		log.AddWarning("Update save question_grp but the question_grp is null")
 		OutPut(w, 201, "Update save question_grp but the question_grp is null", nil)
+		return
 	} else {
 		if err := json.Unmarshal([]byte(data), &qg); err != nil {
 			log.AddError(err, data)
@@ -700,6 +712,7 @@ func DqgHandle(w http.ResponseWriter, r *http.Request) {
 	if data, err := UnmarshalJ(r, &qg); err != nil {
 		log.AddError(err, string(data))
 		OutPut(w, 201, err.Error(), nil)
+		return
 	} else {
 		if !ump.QgMap[qg.Id].I {
 			log.AddWarning("Delete question_grp but the id isn't correct", qg)
@@ -729,6 +742,7 @@ func ListQuestionGrp(w http.ResponseWriter, r *http.Request) {
 	if data, err := UnmarshalJ(r, &qg); err != nil {
 		log.AddError(err, string(data))
 		OutPut(w, 201, err.Error(), nil)
+		return
 	} else {
 		if !ump.PMap[qg.Paper_Id].I {
 			log.AddWarning("List question_grp but the paper_id isn't correct", data)
@@ -767,6 +781,7 @@ func CpqHandle(w http.ResponseWriter, r *http.Request) {
 	if data, err := UnmarshalJ(r, &pq); err != nil {
 		log.AddError(err, string(data))
 		OutPut(w, 201, err.Error(), nil)
+		return
 	} else {
 		if !ump.QMap[pq.Question_Id].I || !ump.QgMap[pq.Question_Grp_Id].I {
 			log.AddWarning("Create paper_question but the question_id or question_grp_id isn't correct", pq)
@@ -774,7 +789,8 @@ func CpqHandle(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	if uuid, err := Guid(); err != nil {
+	db := gmdb.GetDb()
+	if uuid, err := UGuid(db, gmdb.D_6); err != nil {
 		log.AddError(err, pq)
 		OutPut(w, 203, err.Error(), nil)
 	} else {
@@ -790,10 +806,12 @@ func CSpqHandle(w http.ResponseWriter, r *http.Request) {
 	if data := r.FormValue("data"); data == "" {
 		log.AddWarning("Create save paper_question but the paper_question is null")
 		OutPut(w, 201, "Create save paper_question but the paper_question is null", nil)
+		return
 	} else {
 		if err := json.Unmarshal([]byte(data), &pq); err != nil {
 			log.AddError(err, data)
 			OutPut(w, 202, err.Error(), nil)
+			return
 		} else {
 			if !ump.PqMap[pq.Id].C || !ump.QMap[pq.Question_Id].I || !ump.QgMap[pq.Question_Grp_Id].I {
 				log.AddWarning("Create save paper_question but the id or question_id or question_grp_id isn't correct", pq)
@@ -825,10 +843,12 @@ func USpqHandle(w http.ResponseWriter, r *http.Request) {
 	if data := r.FormValue("data"); data == "" {
 		log.AddWarning("Update save paper_question but the paper_question is null")
 		OutPut(w, 201, "Update save paper_question but the paper_question is null", nil)
+		return
 	} else {
 		if err := json.Unmarshal([]byte(data), &pq); err != nil {
 			log.AddError(err, data)
 			OutPut(w, 202, err.Error(), nil)
+			return
 		} else {
 			if !ump.PqMap[pq.Id].I || !ump.QMap[pq.Question_Id].I || !ump.QgMap[pq.Question_Grp_Id].I {
 				log.AddWarning("Update save paper_question but the id or question_id or question_grp_id isn't correct", pq)
@@ -859,6 +879,7 @@ func DpqHandle(w http.ResponseWriter, r *http.Request) {
 	if data, err := UnmarshalJ(r, &pq); err != nil {
 		log.AddError(err, string(data))
 		OutPut(w, 201, err.Error(), nil)
+		return
 	} else {
 		if !ump.PqMap[pq.Id].I {
 			log.AddWarning("Delete paper_question but the id isn't correct", pq)
@@ -888,6 +909,7 @@ func ListPaperQuestion(w http.ResponseWriter, r *http.Request) {
 	if data, err := UnmarshalJ(r, &pq); err != nil {
 		log.AddError(err, string(data))
 		OutPut(w, 201, err.Error(), nil)
+		return
 	} else {
 		if !ump.QgMap[pq.Question_Grp_Id].I {
 			log.AddWarning("List paper_question but the question_grp_id isn't correct", pq)
@@ -925,6 +947,7 @@ func CqHandle(w http.ResponseWriter, r *http.Request) {
 	if data, err := UnmarshalJ(r, &q); err != nil {
 		log.AddError(err, string(data))
 		OutPut(w, 201, err.Error(), nil)
+		return
 	} else {
 		if !ump.EbMap[q.Exam_Bank_Id].I {
 			log.AddWarning("Create question but the exam_bank_id isn't correct", data)
@@ -932,7 +955,8 @@ func CqHandle(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	if uuid, err := Guid(); err != nil {
+	db := gmdb.GetDb()
+	if uuid, err := UGuid(db, gmdb.D_5); err != nil {
 		log.AddError(err, uuid, q)
 		OutPut(w, 203, err.Error(), nil)
 	} else {
@@ -947,6 +971,7 @@ func CSqHandle(w http.ResponseWriter, r *http.Request) {
 	if data := r.FormValue("data"); data == "" {
 		log.AddWarning("Create save question but the question is null")
 		OutPut(w, 201, "Create save question but the question is null", nil)
+		return
 	} else {
 		if err := json.Unmarshal([]byte(data), &q); err != nil {
 			log.AddError(err, data)
@@ -982,6 +1007,7 @@ func USqHandle(w http.ResponseWriter, r *http.Request) {
 	if data := r.FormValue("data"); data == "" {
 		log.AddWarning("Update save question but the question is null")
 		OutPut(w, 201, "Update save question but the question is null", nil)
+		return
 	} else {
 		if err := json.Unmarshal([]byte(data), &q); err != nil {
 			log.AddError(err, data)
@@ -1017,6 +1043,7 @@ func DqHandle(w http.ResponseWriter, r *http.Request) {
 	if data, err := UnmarshalJ(r, &q); err != nil {
 		log.AddError(err, string(data))
 		OutPut(w, 201, err.Error(), nil)
+		return
 	} else {
 		if !ump.QMap[q.Id].I {
 			log.AddWarning("Delete question but the id or exam_bank_id isn't correct", q)
@@ -1046,6 +1073,7 @@ func ListQuestion(w http.ResponseWriter, r *http.Request) {
 	if data, err := UnmarshalJ(r, &q); err != nil {
 		log.AddError(err, string(data))
 		OutPut(w, 201, err.Error(), nil)
+		return
 	} else {
 		if !ump.EbMap[q.Exam_Bank_Id].I {
 			log.AddWarning("List question but the exam_bank_id isn't correct", data)

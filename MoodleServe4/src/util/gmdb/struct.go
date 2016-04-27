@@ -28,8 +28,10 @@ type DbConfigInfo struct {
 
 type DbOpera struct {
 	Table 	string						//table name
+	FTable	string						//from table. a table name used when copyRow happened
 	Name	[]string					//select fields
 	FV		map[string]interface{}		//field and value
 	FVW 	map[string]interface{} 		//where filed, use with select and update
+	SF		[]string					//select field.used when copy a row from mysql. e.g insert into .... select ... where...
 	NEqual	map[string]string			//conditions field's operated type, default is '='
 }
